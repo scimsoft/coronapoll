@@ -8,7 +8,7 @@ use App\Patient;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use PatientTableSeeder;
 
-
+use Carbon\Carbon;
 class PatientTest extends TestCase
 {
     /**
@@ -29,7 +29,7 @@ class PatientTest extends TestCase
 
     public function testPatientWithSymptomCreation(){
         $this->seed(PatientTableSeeder::class);
-        $this->assertEquals(2, Patient::count());
+        $this->assertEquals(2, Patient::whereDate('created_at', Carbon::today())->count());
     }
 
 }

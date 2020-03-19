@@ -13,8 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    Near you we found:
+                    <br>
+                        {{$patient_confirmed}} patients with confirmed covad-19 diagnosis
+                    <br>
+                        {{$patient_heavy_symptoms}} patients with a lot of symptoms
+                    <br>
+                        {{$patient_light_symptoms}} patients with little symptoms
+                    <br>
+                        {{$patient_no_symptoms}} patients without symptoms
 
-                    You are logged in!
                 </div>
             </div>
         </div>

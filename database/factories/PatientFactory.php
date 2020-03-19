@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(App\Patient::class, function (Faker $faker) {
     return [
         //
-        'status' => rand(1,8),
+        'status' => rand(0,6),
     ];
 });
