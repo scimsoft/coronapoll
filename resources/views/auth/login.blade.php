@@ -5,7 +5,24 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+
+                <div class="card-header">{{ __('Login with Google') }}</div>
+                <div class="form-group row">
+                    <div class="col-md-6 offset-md-4">
+
+                        <a href="{{ url('/redirect') }}" class="btn btn-facebook"> <img src="images/btn_google_signin_dark_normal_web.png"></a>
+
+
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6 offset-md-4">
+
+
+
+                    </div>
+                </div>
+                <div class="card-header">{{ __('Login with email') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -62,12 +79,20 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                
                             </div>
                         </div>
+
                     </form>
+                </div>
+                <div class="card-header">{{ __('Not registerer?') }}</div>
+                <div class="col-md-8 offset-md-4">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

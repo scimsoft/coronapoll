@@ -21,7 +21,8 @@
         @endif
 
         <div class="content">
-            <img src="">
+            <div class="form-group row">
+
         </div>
 
     </div>

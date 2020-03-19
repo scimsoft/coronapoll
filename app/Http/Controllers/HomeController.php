@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home',['patient_confirmed' => Patient::where('status', 3)->count(),
+            'patient_heavy_symptoms' => Patient::where('status', 4)->count(),
+            'patient_light_symptoms' => Patient::where('status', 5)->count(),
+            'patient_no_symptoms' => Patient::where('status', 6)->count()]);
     }
 }
