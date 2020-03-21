@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'near_you_intro' => 'At 3 mi you have:',
+    'near_you_intro' => 'At <strong>3</strong> mi you have:',
     'confirmed_label' => 'confirmed cases.',
-    'very_suspicious_label'  => 'cases with a lot of symptoms',
-    'little_suspicious_label' => 'cases with a few symptoms',
-    'no_suspicous_label' => 'cases with no symptoms',
+    'very_suspicious_label'  => 'with a lot of symptoms',
+    'little_suspicious_label' => 'with a few symptoms',
+    'no_suspicous_label' => 'with no symptoms',
 
 
 
