@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="card-header font-weight-bold"> @lang('diagnosis.Temperatura'):</div>
                     <div class="btn-group" data-toggle="buttons">
-                        <img src="images/termo.png" style="margin-right: 15px">
+                        <img src="images/termo.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label ">
                             <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off">
                             @lang('diagnosis.normaltemp')
@@ -52,7 +52,7 @@
                 <div class="card">
                     <div class="card-header font-weight-bold"> @lang('diagnosis.Cough'):</div>
                     <div class="btn-group" data-toggle="buttons">
-                        <img src="images/cough.png" style="margin-right: 15px">
+                        <img src="images/cough.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label ">
                             <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off">
                             @lang('diagnosis.none')
@@ -71,7 +71,7 @@
                 <div class="card">
                     <div class="card-header font-weight-bold"> @lang('diagnosis.Shortness of Breath'):</div>
                     <div class="btn-group" data-toggle="buttons">
-                        <img src="images/dypnea.png" style="margin-right: 15px">
+                        <img src="images/dypnea.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label ">
                             <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off">
                             @lang('diagnosis.none')
@@ -90,7 +90,7 @@
                 <div class="card">
                     <div class="card-header font-weight-bold"> @lang('diagnosis.Muscle pain'):</div>
                     <div class="btn-group" data-toggle="buttons">
-                        <img src="images/muscle.png" style="margin-right: 15px">
+                        <img src="images/muscle.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label ">
                             <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off">
                             @lang('diagnosis.none')
