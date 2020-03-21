@@ -13,24 +13,22 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        Near you we found:
-                        <br>
-                        {{$patient_confirmed}} patients with confirmed covad-19 diagnosis
-                        <br>
-                        {{$patient_heavy_symptoms}} patients with a lot of symptoms
-                        <br>
-                        {{$patient_light_symptoms}} patients with little symptoms
-                        <br>
-                        {{$patient_no_symptoms}} patients without symptoms
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <p class="h5"> @lang('diagnosis.near_you_intro')</p>
+
+                            <p class="h6"><strong>{{$patient_confirmed}}</strong> @lang('diagnosis.confirmed_label')</p>
+
+                            <p class="h6"><strong>{{$patient_heavy_symptoms}}</strong> @lang('diagnosis.very_suspicious_label')</p>
+
+                            <p class="h6"><strong>{{$patient_light_symptoms}}</strong> @lang('diagnosis.little_suspicious_label')</p>
+
+                            <p class="h6"><strong>{{$patient_no_symptoms}}</strong> @lang('diagnosis.no_suspicous_label')</p>
+                            </div>
 
                     </div>
 
                 </div>
-                <div class="card">
-                    <div class="card-header font-weight-bold"></div>
-                    <div class="card-header font-weight-bolder h2 "> @lang('diagnosis.Auto Test')</div>
-                    &nbsp;
-                </div>
+
 
                 <div class="card">
                     <div class="card-header font-weight-bold"> @lang('diagnosis.Temperatura'):</div>

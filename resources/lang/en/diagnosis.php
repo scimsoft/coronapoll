@@ -12,6 +12,15 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+
+    'near_you_intro' => 'At 3 mi you have:',
+    'confirmed_label' => 'confirmed cases.',
+    'very_suspicious_label'  => 'cases with a lot of symptoms',
+    'little_suspicious_label' => 'cases with a few symptoms',
+    'no_suspicous_label' => 'cases with no symptoms',
+
+
+
     'none' => 'None',
     'alittle' => 'Some',
     'alot' => 'A lot',
