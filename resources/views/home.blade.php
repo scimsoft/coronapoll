@@ -28,43 +28,43 @@
             </div>
             <div class="card">
                 <div class="card-header font-weight-bold"> </div>
-                <div class="card-header font-weight-bolder h2 "> Auto Test</div>
+                <div class="card-header font-weight-bolder h2 "> @lang('diagnosis.Auto Test')</div>
                 &nbsp;
             </div>
             <div class="card">
-                <div class="card-header font-weight-bold"> Temperatura:</div>
+                <div class="card-header font-weight-bold"> @lang('diagnosis.Temperatura'):</div>
                 <div class="btn-group " role="group" aria-label="Basic example">
                     <img src="images/termo.png" style="margin-right: 15px">
-                    <button type="button" class="btn btn-success btn-rounded center">< 37,7</button>
-                    <button type="button" class="btn btn-warning btn-rounded center">37,7-38,7</button>
-                    <button type="button" class="btn btn-danger btn-rounded center">> 38,7 </button>
+                    <button type="button" class="btn btn-success btn-rounded center">@lang('diagnosis.normaltemp')</button>
+                    <button type="button" class="btn btn-warning btn-rounded center">@lang('diagnosis.fever')</button>
+                    <button type="button" class="btn btn-danger btn-rounded center">@lang('diagnosis.highfever')</button>
                 </div>
             </div>
             <div class="card">
-                <div class="card-header font-weight-bold"> Cough:</div>
+                <div class="card-header font-weight-bold"> @lang('diagnosis.Cough'):</div>
                 <div class="btn-group " role="group" aria-label="Basic example">
                     <img src="images/cough.png" style="margin-right: 15px">
-                    <button type="button" class="btn btn-success btn-rounded center">Little</button>
-                    <button type="button" class="btn btn-warning btn-rounded center">Medium</button>
-                    <button type="button" class="btn btn-danger btn-rounded center">Constant</button>
+                    <button type="button" class="btn btn-success btn-rounded center">@lang('diagnosis.none')</button>
+                    <button type="button" class="btn btn-warning btn-rounded center">@lang('diagnosis.alittle')</button>
+                    <button type="button" class="btn btn-danger btn-rounded center">@lang('diagnosis.alot')</button>
                 </div>
             </div>
             <div class="card">
-                <div class="card-header font-weight-bold"> Shortness of Breath:</div>
+                <div class="card-header font-weight-bold"> @lang('diagnosis.Shortness of Breath'):</div>
                 <div class="btn-group " role="group" aria-label="Basic example">
                     <img src="images/dypnea.png" style="margin-right: 15px">
-                    <button type="button" class="btn btn-success btn-rounded center">Little</button>
-                    <button type="button" class="btn btn-warning btn-rounded center">Medium</button>
-                    <button type="button" class="btn btn-danger btn-rounded center">Heavy</button>
+                    <button type="button" class="btn btn-success btn-rounded center">@lang('diagnosis.none')</button>
+                    <button type="button" class="btn btn-warning btn-rounded center">@lang('diagnosis.alittle')</button>
+                    <button type="button" class="btn btn-danger btn-rounded center">@lang('diagnosis.alot')</button>
                 </div>
             </div>
             <div class="card">
-                <div class="card-header font-weight-bold"> Muscle pain:</div>
+                <div class="card-header font-weight-bold"> @lang('diagnosis.Muscle pain'):</div>
                 <div class="btn-group " role="group" aria-label="Basic example">
                     <img src="images/muscle.png" style="margin-right: 15px">
-                    <button type="button" class="btn btn-success btn-rounded center">Little</button>
-                    <button type="button" class="btn btn-warning btn-rounded center">Medium</button>
-                    <button type="button" class="btn btn-danger btn-rounded center">Heavy</button>
+                    <button type="button" class="btn btn-success btn-rounded center">@lang('diagnosis.none')</button>
+                    <button type="button" class="btn btn-warning btn-rounded center">@lang('diagnosis.alittle')</button>
+                    <button type="button" class="btn btn-danger btn-rounded center">@lang('diagnosis.alot')</button>
                 </div>
             </div>
         </div>
