@@ -33,9 +33,11 @@
             </div>
             <div class="card">
                 <div class="card-header font-weight-bold"> @lang('diagnosis.Temperatura'):</div>
+
                 <div class="btn-group " role="group" aria-label="Basic example">
                     <img src="images/termo.png" style="margin-right: 15px">
-                    <button type="button" class="btn btn-success btn-rounded center">@lang('diagnosis.normaltemp')</button>
+
+                    <button type="button" class="btn btn-success btn-rounded center" onclick="addClass('active')">@lang('diagnosis.normaltemp')</button>
                     <button type="button" class="btn btn-warning btn-rounded center">@lang('diagnosis.fever')</button>
                     <button type="button" class="btn btn-danger btn-rounded center">@lang('diagnosis.highfever')</button>
                 </div>
