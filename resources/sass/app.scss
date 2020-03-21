@@ -15,8 +15,12 @@
 .center {
   margin: auto;
   width: 60%;
-
   padding: 10px;
+}
+
+.btn-group.form-check-label:active {
+  border-color: #000000;
+    // color: $color-primary;
 }
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-right-radius: 6px;
@@ -30,4 +34,6 @@
   max-height: 50px;
   vertical-align: middle;
 }
-
+input {
+  visibility: hidden;
+}

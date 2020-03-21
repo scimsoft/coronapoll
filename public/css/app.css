@@ -10893,6 +10893,10 @@ a.text-dark:focus {
   padding: 10px;
 }
 
+.btn-group.form-check-label:active {
+  border-color: #000000;
+}
+
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-right-radius: 6px;
@@ -10907,5 +10911,9 @@ a.text-dark:focus {
   border-bottom-left-radius: 6px;
   max-height: 50px;
   vertical-align: middle;
+}
+
+input {
+  visibility: hidden;
 }
 
