@@ -1,13 +1,15 @@
 @extends('layouts.app')
+@section('content')
 
-<h3>My Google Maps Demo</h3>
 <!--The div element for the map -->
 <div id="map"></div>
+@endsection
 @section('scripts')
 <script>
     function initMap() {
+        alert({{$latitude}});
         // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
+        var uluru = {lat: {{$latitude}}, lng: {{$longitude}}};
         // The map, centered at Uluru
         var map = new google.maps.Map(
             document.getElementById('map'), {zoom: 4, center: uluru});
@@ -16,6 +18,7 @@
     }
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcj0RnwEZYQEmTP6wa6nUf769IDaoEGGI&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&callback=initMap">
 </script>
 @stop
+{{ env('APP_NAME') }}

@@ -68,7 +68,7 @@ class HomeController extends Controller
         $symptom->musclePain = $request->muscle;
         $symptom->save();
 
-        return view('/map');
+        return redirect()->action('MapController@myPosition' );
 
 
 
