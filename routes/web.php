@@ -15,6 +15,10 @@
 //    return view('welcome');
 //});
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/checkin', 'HomeController@checkin')->name('checkin');
+Route::post('/userdata', 'HomeController@userdata')->name('userdata');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
