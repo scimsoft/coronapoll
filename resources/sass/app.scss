@@ -21,22 +21,33 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.btn-group.form-check-label:active {
-  border-color: #000000;
-    // color: $color-primary;
+label {
+  cursor: pointer;
+  min-width: 85px;
+  display:inline-block;
+  position:relative;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group > .btn:last-child, .btn-group > .btn-group:last-child > .btn {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   max-height: 50px;
   vertical-align: middle;
 }
-.btn-group > .btn:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group > .btn:nth-child(2), .btn-group > .btn-group:nth-child(2) > .btn {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   max-height: 50px;
   vertical-align: middle;
 }
-input {
-  visibility: hidden;
+.btn-group > .btn:active{
+  border:5px;
+  border-color: black;
+}
+
+.btn-group{
+  display: flex;
+  margin-right: 10px;
+}
+input[type=radio] {
+  display: none;
 }
