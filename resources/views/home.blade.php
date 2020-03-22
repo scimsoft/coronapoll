@@ -31,8 +31,9 @@
 
 
                 <div class="card">
-                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#tempraturecard"> @lang('diagnosis.Temperatura'):</div>
+                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#tempraturecard"> @lang('diagnosis.Temperatura')</div>
                     <div class="collapse show" id="tempraturecard">
+
                     <div class="btn-group" data-toggle="buttons">
                         <img src="images/termo.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label " data-toggle="collapse" data-target="#tempraturecard">
@@ -51,8 +52,9 @@
                 </div>
                 </div>
                 <div class="card">
-                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#coughcard"> @lang('diagnosis.Cough'):</div>
+                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#coughcard"> @lang('diagnosis.Cough')</div>
                     <div class="collapse show" id="coughcard">
+
                     <div class="btn-group" data-toggle="buttons">
                         <img src="images/cough.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label " data-toggle="collapse" data-target="#coughcard">
@@ -72,8 +74,9 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#shortbreathcard"> @lang('diagnosis.Shortness of Breath'):</div>
+                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#shortbreathcard"> @lang('diagnosis.Shortness of Breath')</div>
                     <div class="collapse show" id="shortbreathcard">
+
                     <div class="btn-group" data-toggle="buttons">
                         <img src="images/dypnea.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label " data-toggle="collapse" data-target="#shortbreathcard">
@@ -92,8 +95,9 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#musclepaincard"> @lang('diagnosis.Muscle pain'):</div>
-                    <div class="collapse show" id="musclepaincard">
+                    <div class="card-header font-weight-bold" data-toggle="collapse" data-target="#musclepaincard"> @lang('diagnosis.Muscle pain')</div>
+                    <div class="collapse show full" id="musclepaincard">
+
                     <div class="btn-group" data-toggle="buttons">
                         <img src="images/muscle.png" style="margin-right: 5px">
                         <label class="btn btn-success center form-check-label " data-toggle="collapse" data-target="#musclepaincard">
@@ -111,7 +115,25 @@
                     </div>
                 </div>
             </div>
+                    <div class="card">
+                        <button type="button" class="btn btn-primary" onclick="showPosition();">Send</button>
+                    </div>
+
         </div>
     </div>
     </div>
 @endsection
+        @section('scripts')
+            <script>
+                function showPosition() {
+                    if(navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+                            var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+                            alert(positionInfo);
+                        });
+                    } else {
+                        alert("Sorry, your browser does not support HTML5 geolocation.");
+                    }
+                }
+            </script>
+@stop
