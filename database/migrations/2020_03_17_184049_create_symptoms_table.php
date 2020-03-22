@@ -16,12 +16,12 @@ class CreateSymptomsTable extends Migration
         Schema::create('symptoms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
-            $table->string('ip');
-            $table->bigInteger('coX');
-            $table->bigInteger('coY');
-            $table->integer('location');
+            $table->string('ip')->nullable();
+            $table->double('longitude')->nullable();
+            $table->double('latitude')->nullable();
+            $table->integer('location')->nullable();
             $table->bigInteger('temp');
-            $table->integer('caugh');
+            $table->integer('cough');
             $table->integer('musclePain');
             $table->integer('breathShortness');
             $table->timestamps();

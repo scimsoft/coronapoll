@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Patient;
+use App\Symptom;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function redirect;
 
 class HomeController extends Controller
 {
@@ -43,18 +45,33 @@ class HomeController extends Controller
             'patient_no_symptoms' => User::where('corona_stage', 6)->count()];
 }
     public function userdata(Request $request){
-//        $newUser                  = Auth()::user();
-//        $newUser->is_checked_in            = 1;
-//
-//        $newUser->save();
+
         $user = Auth::user();
         $user->age = $request->age;
         if($request->cofirmed =1)$user->corona_stage = 1;
         $user->is_checked_in = 1;
         $user->save();
 
+        return redirect()->action('HomeController@index',$this->getStatData() );
 
-        return view('home',$this->getStatData() );
+    }
+    public function senddiagnose(Request $request){
+        $symptom = new Symptom();
+        $symptom->user_id = Auth::user()->id;
+        $symptom->ip = $request->ip();
+        $symptom->latitude = $request->latitude;
+        $symptom->longitude = $request->longitude;
+
+        $symptom->temp = $request->temprature;
+        $symptom->cough = $request->cough;
+        $symptom->breathShortness = $request->breath;
+        $symptom->musclePain = $request->muscle;
+        $symptom->save();
+
+        return view('/map');
+
+
+
     }
 
     public function checkin()
