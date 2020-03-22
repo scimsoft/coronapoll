@@ -1,4 +1,4 @@
-<?php
+m<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,7 +15,7 @@ class CreateSymptomsTable extends Migration
     {
         Schema::create('symptoms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('patient_id');
+            $table->bigInteger('user_id');
             $table->string('ip');
             $table->bigInteger('coX');
             $table->bigInteger('coY');

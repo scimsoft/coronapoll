@@ -1,8 +1,9 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 
-class PatientTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +13,7 @@ class PatientTableSeeder extends Seeder
     public function run()
     {
         //
-        factory(\App\Patient::class, 200)->create()->each(function($u) {
+        factory(User::class, 20)->create()->each(function($u) {
             $u->symptoms()->saveMany(factory(App\Symptom::class,4)->make());
         });
     }

@@ -15,6 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -36,4 +37,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isCheckedIn()
+    {
+        if('is_checked_in' >0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public function symptoms()
+    {
+        return $this->hasMany('App\Symptom');
+    }
 }
