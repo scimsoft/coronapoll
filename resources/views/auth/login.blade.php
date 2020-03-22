@@ -4,10 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="accordion" id="loginaccordion">
             <div class="card">
 
-                <div class="card-header">{{ __('Login with Google') }}</div>
-                <div class="form-group row">
+                <div class="card-header" id="googleheader" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{{ __('Login with Google') }}</div>
+                <div class="form-group row"  id="collapseOne" class="collapse show" aria-labelledby="googleheader" data-parent="#loginaccordion">
                     <div class="col-md-6 offset-md-4">
 
                         <a href="{{ url('/redirect') }}" class="btn btn-facebook"> <img src="images/btn_google_signin_dark_normal_web.png"></a>
@@ -22,13 +23,13 @@
 
                     </div>
                 </div>
-                <div class="card-header">{{ __('Login with email') }}</div>
+                <div class="card-header " id="emailheader" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">{{ __('Login with email') }}</div>
 
-                <div class="card-body">
+                <div class="card-body collapse" id="collapseTwo" aria-labelledby="emailheader" data-parent="#loginaccordion">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row" >
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -43,7 +44,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right" >{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -86,10 +87,12 @@
 
                     </form>
                 </div>
-                <div class="card-header">{{ __('Not registerer?') }}</div>
-                <div class="col-md-8 offset-md-4">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <div class="card">
+                <div class="card-header" id="registerheader" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">{{ __('Not registerer?') }}</div>
+                <div class="col-md-8 offset-md-4 collapse" id="collapseThree" aria-labelledby="registerheader" data-parent="#loginaccordion">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Please Register Here') }}</a>
                 </div>
+            </div>
             </div>
         </div>
     </div>
