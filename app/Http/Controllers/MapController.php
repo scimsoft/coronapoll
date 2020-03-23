@@ -34,10 +34,10 @@ class MapController extends Controller
         $startLong = $long-0.05;
         $endLong = $long+0.05;
         //TODO solo las ultimas symptoms
-        $symptomDataRange = DB::table('symptoms')
-            ->whereBetween('latitude',[$startLang,$endLang])
-            ->whereBetween('longitude',[$startLong,$endLong])
-            ->get();
+        $symptomDataRange = DB::table('symptoms')->get();
+//            ->whereBetween('latitude',[$startLang,$endLang])
+//            ->whereBetween('longitude',[$startLong,$endLong])
+//            ->get();
 
 
 

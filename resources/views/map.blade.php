@@ -3,6 +3,7 @@
 
 <!--The div element for the map -->
 <div id="map"></div>
+
 @endsection
 @section('scripts')
 <script>
