@@ -34,45 +34,61 @@
 
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header font-weight-bold">@lang('views.personal_data_header')</div>
-                    <br>
+
+                <div class="card " >
+                    <div class="card-header font-weight-bold " >@lang('views.personal_data_header')</div>
+                    <div class="card-body">
                     <form method="post" action="/userdata" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group row">
                             <label for="titleid" class="col-sm-5 col-form-label">@lang('views.age')</label>
                             <div class="">
-                                <input name="age" type="text" class="form-control" id="titleid" placeholder="">
+                                <input name="age" type="text" class="form-control col-sm-5 " id="titleid" placeholder="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="titleid" class="col-sm-5 col-form-label">@lang('views.riskgroup')</label>
-                            <div class="dropdown">
-                                <button name='riskgroup' class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    @lang('views.make_a_choice')
-                                </button>
-                                <div class="dropdown-menu col-sm-9" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">@lang('views.lowrisk')</a>
-                                    <a class="dropdown-item" href="#">@lang('views.mediumrisk')</a>
-                                    <a class="dropdown-item" href="#">@lang('views.highrisk')</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="releasedateid" class="col-sm-5 col-form-label">@lang('views.confirmed')</label>
-                            <div class="col-sm-1">
-                                <input name="confirmed" type="checkbox" class="form-control" id="confirmed" >
-                            </div>
-                        </div>
+                            <div class="btn-group" data-toggle="buttons">
 
+                                <label class="btn btn-success center form-check-label " data-toggle="collapse"
+                                       data-target="#shortbreathcard">
+                                    <input class="form-check-input" type="radio" name="breath" id="option1"
+                                           autocomplete="off" value="1">
+                                    @lang('diagnosis.none')
+                                </label>
+                                <label class="btn btn-warning center form-check-label" data-toggle="collapse"
+                                       data-target="#shortbreathcard">
+                                    <input class="form-check-input" type="radio" name="breath" id="option2"
+                                           autocomplete="off" value="2"> @lang('diagnosis.alittle')
+                                </label>
+                                <label class="btn btn-danger center form-check-label" data-toggle="collapse"
+                                       data-target="#shortbreathcard">
+                                    <input class="form-check-input" type="radio" name="breath" id="option3"
+                                           autocomplete="off" value="3"> @lang('diagnosis.alot')
+                                </label>
+                            </div>
+                        </div>
+                        {{--<div class="form-group row">--}}
+                            {{--<label for="releasedateid" class="col-sm-5 col-form-label">@lang('views.confirmed')</label>--}}
+                            {{--<div class="col-sm-1">--}}
+                                {{--<input name="confirmed" type="checkbox" class="form-control" id="confirmed" >--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                        <!-- Default switch -->
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitches" name="confirmed">
+                            <label class="custom-control-label" for="customSwitches">@lang('views.confirmed')</label>
+                        </div>
+<br>
                         <div class="form-group row">
-                            <div class="offset-sm-3 col-sm-9">
+                            <div class="">
                                 <button type="submit" class="btn btn-primary">@lang('views.checkindata')</button>
                             </div>
                         </div>
                     </form>
 
-                    <div class="card-body">
+
                     </div>
 
                 </div>
