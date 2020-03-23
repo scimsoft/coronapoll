@@ -1,6 +1,13 @@
 <?php
 
 return [
+
+    'welcomeheader'=>'STOP COVID-19 ',
+    'welcomename'=>'We can stop the coronavirus together.',
+    'welcometext'=>'If we decide to share information, we can help avoid people in risk to come to areas with a bigger possibility to get contamed. <br> Please register and start sharing your condition. <br> All the information you share will be <bold>anonymous</bold>, and we will not share personal data with third-parties.<br><br> Login and see round you. ',
+
+
+
     'personal_data_anonymous' => 'Your Anonymousity',
 
     'personal_data_header' => 'Personal Data',

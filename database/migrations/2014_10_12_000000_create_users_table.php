@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
 
             $table->boolean('is_checked_in')->default(false);
             $table->integer('age')->nullable();
+            $table->integer('riskgroup')->nullable();
             $table->integer('corona_stage')->nullable();
 
             $table->rememberToken();

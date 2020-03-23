@@ -4,16 +4,33 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">@lang('views.welcomeheader')</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <p class="h5"> @lang('views.welcomename')</p>
+
+                         @lang('views.welcometext')</p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
             <div class="accordion" id="loginaccordion">
             <div class="card">
 
                 <div class="card-header" id="googleheader" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{{ __('Login with Google') }}</div>
                 <div class="form-group row"  id="collapseOne" class="collapse show" aria-labelledby="googleheader" data-parent="#loginaccordion">
-                    <div class="col-md-6 offset-md-4">
-
-                        <a href="{{ url('/redirect') }}" class="btn btn-facebook"> <img src="images/btn_google_signin_dark_normal_web.png"></a>
-
-
+                    <div class="col-md-6 offset-md-3">
+                        <a href="{{ url('/redirect') }}" class="btn btn-facebook col-md-6"> <img src="images/btn_google_signin_dark_normal_web.png"></a>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -23,9 +40,9 @@
 
                     </div>
                 </div>
-                <div class="card-header " id="emailheader" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">{{ __('Login with email') }}</div>
+                <div class="card-header " id="emailheader" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">{{ __('Login with email') }}</div>
 
-                <div class="card-body collapse" id="collapseTwo" aria-labelledby="emailheader" data-parent="#loginaccordion">
+                <div class="card-body collapse show" id="collapseTwo" aria-labelledby="emailheader" data-parent="#loginaccordion">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -99,3 +116,10 @@
 </div>
 
 @endsection
+    @section('scripts')
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script >
+            var language = window.navigator.userLanguage || window.navigator.language;
+            document.getElementById("latitude").value = position.coords.latitude;
+        </script>
+@stop
