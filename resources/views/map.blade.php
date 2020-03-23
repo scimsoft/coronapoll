@@ -3,32 +3,62 @@
 
 <!--The div element for the map -->
 <div id="map"></div>
+<input type="hidden" id="casefilter" value="2">
+<br>
+<div class="btn-group" data-toggle="buttons">
 
+    <label class="btn btn-success center form-check-label " data-toggle="collapse"
+           data-target="#musclepaincard">
+        <input class="form-check-input" type="radio" name="muscle" id="option1"
+               autocomplete="off" value="1" onclick="setFilterValue(1);">
+        @lang('views.lowrisk')
+    </label>
+    <label class="btn btn-warning center form-check-label" data-toggle="collapse"
+           data-target="#musclepaincard">
+        <input class="form-check-input" type="radio" name="muscle" id="option2"
+               autocomplete="off" value="2" onclick="setFilterValue(2);"> @lang('views.mediumrisk')
+    </label>
+    <label class="btn btn-danger center form-check-label" data-toggle="collapse"
+           data-target="#musclepaincard">
+        <input class="form-check-input" type="radio" name="muscle" id="option3"
+               autocomplete="off" value="3"onclick="setFilterValue(3);"> @lang('views.highrisk')
+    </label>
+</div>
 @endsection
 @section('scripts')
 <script>
+    var map;
     function initMap() {
 
         // The location of Uluru
         var uluru = {lat: {{$latitude}}, lng: {{$longitude}}};
         // The map, centered at Uluru
-        var map = new google.maps.Map(
+        map = new google.maps.Map(
             document.getElementById('map'), {
                 zoom: 17,
                 center: uluru,
                 mapTypeId: 'satellite'});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
+        initHeatMap();
 
+
+    }
+    function initHeatMap(){
+        var heatmap = null;
         $mydatapoints = @json($dataPoints);
+        $mycasefilter=(document.getElementById('casefilter').value);
         var heatMapData = [];
         for (i = 0; i < $mydatapoints.length; i++) {
             var tempLat = $mydatapoints[i][0];  // was [0]
-            var tempLong = $mydatapoints[i][1]; // was [1]
+            var tempLong = $mydatapoints[i][1];
+            var mystage= $mydatapoints[i][2];
             var tempVar = new google.maps.LatLng(tempLat, tempLong);
-            heatMapData.push(new google.maps.LatLng(tempLat, tempLong));
+            if(mystage == $mycasefilter) {
+                heatMapData.push(new google.maps.LatLng(tempLat, tempLong, mystage));
+            }
         }
-        var heatmap = new google.maps.visualization.HeatmapLayer({
+        heatmap = new google.maps.visualization.HeatmapLayer({
             data: heatMapData
         });
         var gradient = [
@@ -50,7 +80,10 @@
         heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
         heatmap.set('radius', heatmap.get('radius') ? null : 20);
         heatmap.setMap(map);
-
+    }
+    function setFilterValue(myvalue){
+        document.getElementById('casefilter').value = myvalue;
+        initHeatMap();
     }
 </script>
 <script async defer

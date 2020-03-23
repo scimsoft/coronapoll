@@ -43,9 +43,15 @@ class MapController extends Controller
 
         $heatmap_points = [];
         foreach ($symptomDataRange as $symptomDataPoint){
+            $breathShortness =$symptomDataPoint->breathShortness;
+            $fever=$symptomDataPoint->temp;
+            $cough=$symptomDataPoint->cough;
+            $musclePain=$symptomDataPoint->musclePain;
+            $coranastage = round((float)(($breathShortness*3)+($fever*3)+($cough*2)+($musclePain))/9);
             array_push($heatmap_points, [
                 $symptomDataPoint->latitude,
-                $symptomDataPoint->longitude
+                $symptomDataPoint->longitude,
+                $coranastage,
             ]);
         }
         return $heatmap_points;

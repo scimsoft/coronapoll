@@ -20,7 +20,7 @@ return [
     'no_suspicous_label' => 'casos sin symptomas',
 
     'none' => 'nada',
-    'alittle' => 'un Poco',
+    'alittle' => 'un poco',
     'alot' => 'mucho',
     'normaltemp' => '< 38',
     'fever' => ' 38 - 39',
