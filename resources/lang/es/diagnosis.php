@@ -22,9 +22,9 @@ return [
     'none' => 'nada',
     'alittle' => 'un Poco',
     'alot' => 'mucho',
-    'normaltemp' => 'menos de 38',
-    'fever' => 'entre 38 y 39',
-    'highfever' => 'mas de 39',
+    'normaltemp' => '< 38',
+    'fever' => ' 38 - 39',
+    'highfever' => '> 39',
 
     'Auto Test' => 'Auto Test',
     'Temperatura' => 'Cual es tu temperatura?',
