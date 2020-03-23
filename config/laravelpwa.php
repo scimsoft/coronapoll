@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'name' => 'Corona Auto Test',
+    'name' => 'StopCoronaApp',
     'manifest' => [
-        'name' => env('APP_NAME', 'My PWA App'),
+        'name' => 'StopCoronaApp',
         'short_name' => 'Corona',
         'start_url' => '/',
         'background_color' => '#ffffff',
