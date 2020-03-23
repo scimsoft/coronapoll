@@ -19,9 +19,9 @@ return [
     'little_suspicious_label' => 'casos con poco symptomas',
     'no_suspicous_label' => 'casos sin symptomas',
 
-    'none' => 'Nada',
-    'alittle' => 'Un Poco',
-    'alot' => 'Mucho',
+    'none' => 'nada',
+    'alittle' => 'un Poco',
+    'alot' => 'mucho',
     'normaltemp' => 'menos de 38',
     'fever' => 'entre 38 y 39',
     'highfever' => 'mas de 39',

@@ -32,5 +32,6 @@ return [
             '2048x2732' => '/images/icons/splash-2048x2732.png',
         ],
         'custom' => []
+
     ]
 ];

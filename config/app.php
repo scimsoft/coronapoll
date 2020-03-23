@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
     'fallback_locale' => 'en',
 
     /*
@@ -179,7 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
-        GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
+
 
     ],
 
@@ -235,7 +235,7 @@ return [
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
-        'GoogleMaps' => GoogleMaps\Facade\GoogleMapsFacade::class,
+
 
     ],
 
