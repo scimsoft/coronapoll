@@ -87,7 +87,7 @@ class HomeController extends Controller
         $symptom->musclePain = $musclePain;
         $symptom->save();
 
-        $coranastage = ((float)(($breathShortness*3)+($fever*3)+($cough*2)+($musclePain))/9);
+        $coranastage = round((float)(($breathShortness*3)+($fever*3)+($cough*2)+($musclePain))/9);
         //$coranastage =$breathShortness * 3;
 
         $user = Auth::user();
