@@ -16,17 +16,17 @@
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <p class="h5"> @lang('diagnosis.near_you_intro')</p>
 
-                            <p class="h6"><strong>{{$patient_confirmed}}</strong> @lang('diagnosis.confirmed_label')</p>
+                            <p class="h6 text-danger"><strong>{{$patient_confirmed}}</strong> @lang('diagnosis.confirmed_label')</p>
 
-                            <p class="h6">
+                            <p class="h6 text-danger">
                                 <strong>{{$patient_heavy_symptoms}}</strong> @lang('diagnosis.very_suspicious_label')
                             </p>
 
-                            <p class="h6">
+                            <p class="h6 text-warning">
                                 <strong>{{$patient_light_symptoms}}</strong> @lang('diagnosis.little_suspicious_label')
                             </p>
 
-                            <p class="h6">
+                            <p class="h6 text-success">
                                 <strong>{{$patient_no_symptoms}}</strong> @lang('diagnosis.no_suspicous_label')</p>
                         </div>
 
@@ -59,7 +59,10 @@
                                     <input class="form-check-input" type="radio" name="temprature" id="option3"
                                            autocomplete="off" value="3"> @lang('diagnosis.highfever')
                                 </label>
+
+
                             </div>
+                            <span class="text-danger">{{ $errors->first('temprature') }}</span>
                         </div>
                     </div>
                     <div class="card">
@@ -86,7 +89,9 @@
                                            autocomplete="off" value="3"> @lang('diagnosis.alot')
                                 </label>
                             </div>
+                            <span class="text-danger">{{ $errors->first('cough') }}</span>
                         </div>
+
                     </div>
 
                     <div class="card">
@@ -113,6 +118,7 @@
                                            autocomplete="off" value="3"> @lang('diagnosis.alot')
                                 </label>
                             </div>
+                            <div class="text-danger">{{ $errors->first('breath') }}</div>
                         </div>
 
                         <div class="card">
@@ -139,6 +145,7 @@
                                                autocomplete="off" value="3"> @lang('diagnosis.alot')
                                     </label>
                                 </div>
+                                <span class="text-danger">{{ $errors->first('muscle') }}</span>
                             </div>
                         </div>
                         <input id="latitude" type="hidden" name="latitude" value="">
@@ -154,6 +161,7 @@
     </div>
         @endsection
         @section('scripts')
+
             <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
             <script>
                 $( document ).ready(function() {
@@ -166,6 +174,7 @@
                         alert("Sorry, your browser does not support HTML5 geolocation.");
                     }
                 });
+
             </script>
 
 @stop

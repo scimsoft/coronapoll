@@ -45,7 +45,11 @@ class HomeController extends Controller
             'patient_no_symptoms' => User::where('corona_stage', 6)->count()];
 }
     public function userdata(Request $request){
+        request()->validate([
+            'age' => 'required',
+            'riskgroup' => 'required',
 
+        ]);
         $user = Auth::user();
         $user->age = $request->age;
         if($request->cofirmed =1)$user->corona_stage = 1;
@@ -56,6 +60,14 @@ class HomeController extends Controller
 
     }
     public function senddiagnose(Request $request){
+
+        request()->validate([
+            'temprature' => 'required',
+            'cough' => 'required',
+            'breath' => 'required',
+            'muscle' => 'required',
+
+        ]);
         $symptom = new Symptom();
         $symptom->user_id = Auth::user()->id;
         $symptom->ip = $request->ip();

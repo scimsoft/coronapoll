@@ -44,29 +44,31 @@
                             <label for="titleid" class="col-sm-5 col-form-label">@lang('views.age')</label>
                             <div class="">
                                 <input name="age" type="text" class="form-control col-sm-5 " id="titleid" placeholder="">
+                                <span class="text-danger">{{ $errors->first('age') }}</span>
                             </div>
+
                         </div>
                         <div class="form-group row">
                             <label for="titleid" class="col-sm-5 col-form-label">@lang('views.riskgroup')</label>
                             <div class="btn-group" data-toggle="buttons">
 
-                                <label class="btn btn-success center form-check-label " data-toggle="collapse"
-                                       data-target="#shortbreathcard">
-                                    <input class="form-check-input" type="radio" name="breath" id="option1"
+                                <label class="btn btn-success center form-check-label " >
+                                    <input class="form-check-input" type="radio" name="riskgroup" id="option1"
                                            autocomplete="off" value="1">
                                     @lang('diagnosis.none')
                                 </label>
-                                <label class="btn btn-warning center form-check-label" data-toggle="collapse"
-                                       data-target="#shortbreathcard">
-                                    <input class="form-check-input" type="radio" name="breath" id="option2"
+                                <label class="btn btn-warning center form-check-label" >
+                                    <input class="form-check-input" type="radio" name="riskgroup" id="option2"
                                            autocomplete="off" value="2"> @lang('diagnosis.alittle')
                                 </label>
-                                <label class="btn btn-danger center form-check-label" data-toggle="collapse"
-                                       data-target="#shortbreathcard">
-                                    <input class="form-check-input" type="radio" name="breath" id="option3"
+                                <label class="btn btn-danger center form-check-label" >
+                                    <input class="form-check-input" type="radio" name="riskgroup" id="option3"
                                            autocomplete="off" value="3"> @lang('diagnosis.alot')
                                 </label>
+
                             </div>
+                            <span class="col-sm-5 col-form-label"></span>
+                            <span class="text-danger">{{ $errors->first('riskgroup') }}</span>
                         </div>
                         {{--<div class="form-group row">--}}
                             {{--<label for="releasedateid" class="col-sm-5 col-form-label">@lang('views.confirmed')</label>--}}
@@ -81,8 +83,8 @@
                             <label class="custom-control-label" for="customSwitches">@lang('views.confirmed')</label>
                         </div>
 <br>
-                        <div class="form-group row">
-                            <div class="">
+                        <div class="form-group row ">
+                            <div class="col-md-10">
                                 <button type="submit" class="btn btn-primary">@lang('views.checkindata')</button>
                             </div>
                         </div>
@@ -99,6 +101,7 @@
 @endsection
 @section('scripts')
     <script>
+
         function showPosition() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
