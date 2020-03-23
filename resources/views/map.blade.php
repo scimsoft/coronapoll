@@ -28,6 +28,7 @@
 @section('scripts')
 <script>
     var map;
+    var heatmap ;
     function initMap() {
 
         // The location of Uluru
@@ -45,14 +46,16 @@
 
     }
     function initHeatMap(){
-        var heatmap = null;
-        $mydatapoints = @json($dataPoints);
+
+
+        var mydatapoints = [];
+        mydatapoints = @json($dataPoints);
         $mycasefilter=(document.getElementById('casefilter').value);
         var heatMapData = [];
-        for (i = 0; i < $mydatapoints.length; i++) {
-            var tempLat = $mydatapoints[i][0];  // was [0]
-            var tempLong = $mydatapoints[i][1];
-            var mystage= $mydatapoints[i][2];
+        for (i = 0; i < mydatapoints.length; i++) {
+            var tempLat = mydatapoints[i][0];  // was [0]
+            var tempLong = mydatapoints[i][1];
+            var mystage= mydatapoints[i][2];
             var tempVar = new google.maps.LatLng(tempLat, tempLong);
             if(mystage == $mycasefilter) {
                 heatMapData.push(new google.maps.LatLng(tempLat, tempLong, mystage));
@@ -82,6 +85,7 @@
         heatmap.setMap(map);
     }
     function setFilterValue(myvalue){
+        heatmap.setMap(null)
         document.getElementById('casefilter').value = myvalue;
         initHeatMap();
     }
