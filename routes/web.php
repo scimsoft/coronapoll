@@ -14,6 +14,11 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
+
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/checkin', 'HomeController@checkin')->name('checkin');
@@ -30,4 +35,4 @@ Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/maps','MapController@myPosition');
 
-
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);

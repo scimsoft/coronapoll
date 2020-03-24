@@ -117,9 +117,5 @@
 
 @endsection
     @section('scripts')
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script >
-            var language = window.navigator.userLanguage || window.navigator.language;
-            document.getElementById("latitude").value = position.coords.latitude;
-        </script>
+
 @stop

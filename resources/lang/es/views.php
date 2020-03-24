@@ -3,8 +3,8 @@
 return [
 
     'welcomeheader'=>'STOP COVID-19 ',
-    'welcomename'=>'We can stop the coronavirus together.',
-    'welcometext'=>'If we decide to share information, we can help avoid people in risk to come to areas with a bigger possibility to get contamed. <br> Please register and start sharing your condition. <br> All the information you share will be <bold>anonymous</bold>, and we will not share personal data with third-parties.<br><br> Login and see round you. ',
+    'welcomename'=>'Podemos parar la expancion del virus juntos.',
+    'welcometext'=>'Si decidimos compartir la inforacion podemos ayudar a gente en riesgo no acudir a sitios o zonas contagiadios. <br> 1. Registrase o entrar con Google <br> 2. Permita el aplicacion usar tu ubicacion, pulsando el boton.',
 
 
 
