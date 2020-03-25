@@ -21,7 +21,13 @@ class MapController extends Controller
         $id = Auth::user()->id;
         $myLatitude = $this->lastSymptom($id)->latitude;
         $myLongitude=$this->lastSymptom($id)->longitude;
-        return view('map',['latitude' => $myLatitude,'longitude' => $myLongitude,'dataPoints' => $this->createHeatmapDataPoints($myLatitude,$myLongitude,0)]);
+        return view('map',['zoomlevel'=>'14','maxzoomlevel'=>'14','latitude' => $myLatitude,'longitude' => $myLongitude,'dataPoints' => $this->createHeatmapDataPoints($myLatitude,$myLongitude,0)]);
+    }
+
+    public function generalView(){
+        return view('map',['zoomlevel'=>'2','maxzoomlevel'=>'4','latitude' => '40.409120', 'longitude' => '-3.704954','dataPoints' => $this->createGeneralHetamap()]);
+
+
     }
 
     private function lastSymptom(int $id){
@@ -49,14 +55,21 @@ class MapController extends Controller
             $musclePain=$symptomDataPoint->musclePain;
             $coranastage = round((float)(($breathShortness*3)+($fever*3)+($cough*2)+($musclePain))/9);
             array_push($heatmap_points, [
-                $symptomDataPoint->latitude,
                 $symptomDataPoint->longitude,
+                $symptomDataPoint->latitude,
+
                 $coranastage,
             ]);
         }
         return $heatmap_points;
     }
 
+    private function createGeneralHetamap(){
+        $openmapdata =[];
+        $openmapdata = config('opendata.opendata');
+        return $openmapdata;
+
+    }
     private function getUserData(){
         $user = Auth::user();
         return $user;

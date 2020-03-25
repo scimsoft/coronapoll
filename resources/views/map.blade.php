@@ -3,7 +3,7 @@
 
 <!--The div element for the map -->
 <div id="map"></div>
-<input type="hidden" id="casefilter" value="2">
+<input type="hidden" id="casefilter" value="3">
 <br>
 <div class="btn-group" data-toggle="buttons">
 
@@ -21,11 +21,32 @@
                autocomplete="off" value="3"onclick="setFilterValue(3);"> @lang('views.highrisk')
     </label>
 </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="images/icons/icon-36x36.png">
+                <h5 class="modal-title" id="exampleModalLongTitle"><span>    </span>    Please Colaborate</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please login, enter your data, and zoom in
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('scripts')
 <script>
     var map;
     var heatmap ;
+
     function initMap() {
 
         // The location of Uluru
@@ -33,11 +54,17 @@
         // The map, centered at Uluru
         map = new google.maps.Map(
             document.getElementById('map'), {
-                zoom: 17,
-                center: uluru,
+                zoom: {{$zoomlevel}},
+                    center: uluru,
                 mapTypeId: 'satellite'});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
+        google.maps.event.addListener(map, 'zoom_changed', function() {
+            if (map.getZoom() > {{$maxzoomlevel}}) {
+                map.setZoom({{$maxzoomlevel}});
+                $('#myModal').modal('show');
+            };
+        });
         initHeatMap();
 
 
@@ -50,8 +77,8 @@
         $mycasefilter=(document.getElementById('casefilter').value);
         var heatMapData = [];
         for (i = 0; i < mydatapoints.length; i++) {
-            var tempLat = mydatapoints[i][0];  // was [0]
-            var tempLong = mydatapoints[i][1];
+            var tempLat = mydatapoints[i][1];  // was [0]
+            var tempLong = mydatapoints[i][0];
             var mystage= mydatapoints[i][2];
             var tempVar = new google.maps.LatLng(tempLat, tempLong);
             if(mystage == $mycasefilter) {
