@@ -26,15 +26,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <img src="images/icons/icon-36x36.png">
-                <h5 class="modal-title" id="exampleModalLongTitle"><span>    </span>    Please Colaborate</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle"><span>    </span>@lang('views.modeltitle')</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Please login, enter your data, and zoom in
+                @lang('views.modaltext')
             </div>
             <div class="modal-footer">
+                <a type="button" href="/login"  class="btn btn-primary " >Login</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
             </div>
@@ -61,8 +62,9 @@
         var marker = new google.maps.Marker({position: uluru, map: map});
         google.maps.event.addListener(map, 'zoom_changed', function() {
             if (map.getZoom() > {{$maxzoomlevel}}) {
-                map.setZoom({{$maxzoomlevel}});
+
                 $('#myModal').modal('show');
+                map.setZoom({{$maxzoomlevel}});
             };
         });
         initHeatMap();

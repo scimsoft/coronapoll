@@ -6,6 +6,8 @@ return [
     'welcomename'=>'Podemos parar la expancion del virus juntos.',
     'welcometext'=>'Si decidimos compartir la inforacion podemos ayudar a gente en riesgo no acudir a sitios o zonas contagiadios. <br> 1. Registrase o entrar con Google <br> 2. Permita el aplicacion usar tu ubicacion, pulsando el boton.',
 
+    'modeltitle'=>'AYUDANOS a PARAR el coronavirus',
+    'modaltext'=>'Si queieres ver zonas de alto riesgo y bajo riesgo , haz login y colabora indicando tu estado de riesgo y salud.',
 
 
     'personal_data_anonymous' => 'Your Anonymousity',
