@@ -7,19 +7,16 @@
 <br>
 <div class="btn-group" data-toggle="buttons">
 
-    <label class="btn btn-success center form-check-label " data-toggle="collapse"
-           data-target="#musclepaincard">
+    <label class="btn btn-outline-success center form-check-label" >
         <input class="form-check-input" type="radio" name="muscle" id="option1"
                autocomplete="off" value="1" onclick="setFilterValue(1);">
         @lang('views.lowrisk')
     </label>
-    <label class="btn btn-warning center form-check-label" data-toggle="collapse"
-           data-target="#musclepaincard">
+    <label class="btn btn-outline-warning center form-check-label" >
         <input class="form-check-input" type="radio" name="muscle" id="option2"
                autocomplete="off" value="2" onclick="setFilterValue(2);"> @lang('views.mediumrisk')
     </label>
-    <label class="btn btn-danger center form-check-label" data-toggle="collapse"
-           data-target="#musclepaincard">
+    <label class="btn btn-outline-danger center form-check-label" >
         <input class="form-check-input" type="radio" name="muscle" id="option3"
                autocomplete="off" value="3"onclick="setFilterValue(3);"> @lang('views.highrisk')
     </label>
