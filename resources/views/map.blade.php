@@ -36,7 +36,7 @@
             </div>
             <div class="modal-footer">
                 <a type="button" href="/login"  class="btn btn-primary " >Login</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="map.setZoom({{$maxzoomlevel}});">Close</button>
 
             </div>
         </div>
@@ -64,7 +64,7 @@
             if (map.getZoom() > {{$maxzoomlevel}}) {
 
                 $('#myModal').modal('show');
-                map.setZoom({{$maxzoomlevel}});
+
             };
         });
         initHeatMap();
