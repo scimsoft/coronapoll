@@ -19,7 +19,12 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::middleware(['guest:api'])->group(function () {
+
+    Route::get('/', 'MapController@generalView');
+});
+
+Route::get('/index', 'HomeController@index')->name('home');
 
 Route::get('/checkin', 'HomeController@checkin')->name('checkin');
 Route::post('/userdata', 'HomeController@userdata')->name('userdata');
