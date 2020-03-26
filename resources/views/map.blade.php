@@ -6,6 +6,22 @@
 <div id="map"></div>
 <input type="hidden" id="casefilter" value="3">
 <br>
+@guest
+<div class="card">
+<div class="card-body">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <p class="h5"> @lang('views.guestwelcomename')</p>
+
+        @lang('views.guestwelcometext')</p>
+
+
+    </div>
+
+</div>
+</div>
+@endguest
+@if (Auth::check())
+
 <div class="btn-group" data-toggle="buttons">
 
     <label class="btn btn-outline-success center form-check-label" >
@@ -22,6 +38,8 @@
                autocomplete="off" value="3"onclick="setFilterValue(3);"> @lang('views.highrisk')
     </label>
 </div>
+
+@endif
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -43,6 +61,7 @@
         </div>
     </div>
 </div>
+
 @endsection
 @section('scripts')
 <script>
