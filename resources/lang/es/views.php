@@ -2,6 +2,11 @@
 
 return [
 
+    'guestwelcomename'=>'#0corona es un iniciativa open-source',
+
+    'guestwelcometext'=>'#0corona es codigo abierta. <br> Queremos recopilar lo mas datos posibles y pedimos una difusion maxima. <br> Recoleccionamos edad, grupo de riesgo y un seguimiento de tus sintomas y tu localizacion.<br> Por favor que colabora todo el mundo. <br> Mas info gerrit.sevilla@gmail.com ',
+
+
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'Podemos parar la expancion del virus juntos.',
     'welcometext'=>'Si decidimos compartir la inforacion podemos ayudar a gente en riesgo no acudir a sitios o zonas contagiadios. <br> 1. Registrase o entrar con Google <br> 2. Permita el aplicacion usar tu ubicacion, pulsando el boton.',

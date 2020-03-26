@@ -2,6 +2,9 @@
 
 return [
 
+    'guestwelcomename'=>'#0corona is an open-source initiatve',
+    'guestwelcometext'=>'#0corona is an open crowd source initiativa. <br> Our main objective is to obtain as much data as possible of the crowd.<br> age, risk group, symptoms and current location. Plot this data on a map and obtain infection heatpoints and safe zones.<br> Please colaborate. <br> more info gerrit.sevilla@gmail.com ',
+
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'We can stop the coronavirus together.',
     'welcometext'=>'If we decide to share information, we can help avoid people in risk to come to areas with a bigger possibility to get contamed. <br> Please register and start sharing your condition. <br> All the information you share will be <bold>anonymous</bold>, and we will not share personal data with third-parties.<br><br> Login and see round you. ',
