@@ -13,7 +13,7 @@
         <p class="h5"> @lang('views.guestwelcomename')</p>
 
         @lang('views.guestwelcometext')</p>
-
+        <a href="/login" class="btn btn-info">Login</a>
 
     </div>
 
@@ -83,15 +83,9 @@
 
         google.maps.event.addListener(map, 'zoom_changed', function() {
             if (map.getZoom() > {{$maxzoomlevel}}) {
-
                 $('#myModal').modal('show');
-
             }
-
         });
-
-
-
         initHeatMap();
 
 
