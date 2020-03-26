@@ -9,7 +9,7 @@
     <meta name="twitter:creator" content="@gerrit_sevilla">
     <meta name="twitter:title" content="STOP coronavirus">
     <meta name="twitter:description" content="A anonymous crowd-data site, with the intention to share our coronavirus symptoms, to plot a map with coronavirus hotspots and how the evoluate. ">
-    <meta name="twitter:image" content="https://0corona.com/images/0coronamap.jpg">
+    <meta name="twitter:summary_large_image" content="https://0corona.com/images/0coronamap.jpg">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
