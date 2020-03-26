@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Config;
 Route::middleware(['guest'])->group(function () {
 
     Route::get('/', 'MapController@generalView');
+
 });
 Route::group(['middleware' => ['auth']], function () {
     //only authorized users can access these routes
@@ -47,3 +48,4 @@ Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
+Route::get('/about', 'HomeController@about')->name('about');;
