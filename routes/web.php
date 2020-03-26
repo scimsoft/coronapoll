@@ -19,10 +19,12 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 
-Route::middleware(['guest:api'])->group(function () {
+Route::middleware(['guest'])->group(function () {
 
     Route::get('/', 'MapController@generalView');
 });
+Route::group(['middleware' => ['auth']], function () {
+    //only authorized users can access these routes
 
 Route::get('/index', 'HomeController@index')->name('home');
 
@@ -31,13 +33,17 @@ Route::post('/userdata', 'HomeController@userdata')->name('userdata');
 Route::post('/senddiagnose', 'HomeController@senddiagnose')->name('senddiagnose');
 
 
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/maps','MapController@myPosition');
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/maps','MapController@myPosition');
+
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
