@@ -2,6 +2,7 @@
 @section('content')
 
 <!--The div element for the map -->
+
 <div id="map"></div>
 <input type="hidden" id="casefilter" value="3">
 <br>
@@ -60,17 +61,23 @@
                 mapTypeId: 'satellite'});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: uluru, map: map});
+
         google.maps.event.addListener(map, 'zoom_changed', function() {
             if (map.getZoom() > {{$maxzoomlevel}}) {
 
                 $('#myModal').modal('show');
 
-            };
+            }
+
         });
+
+
+
         initHeatMap();
 
 
     }
+
     function initHeatMap(){
 
 
@@ -115,6 +122,7 @@
         document.getElementById('casefilter').value = myvalue;
         initHeatMap();
     }
+
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key={{ config('app.googlekey') }}&callback=initMap&libraries=visualization">
