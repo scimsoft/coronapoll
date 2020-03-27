@@ -24,8 +24,8 @@ return [
     'personal_data_buttom' => 'Doy Permiso de usar mi localizacion',
 
 
-    'age' => 'Tu edad',
-    'riskgroup' => '¿Eres un persona de riesgo?',
+    'age' => 'Tu edad (Opcional)',
+    'riskgroup' => '¿Eres un persona de riesgo? (Opcional)',
 
     'make_a_choice' => "Select an option",
     'lowrisk' => "Poco Riesgo",

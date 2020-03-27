@@ -49,11 +49,7 @@ class HomeController extends Controller
             'patient_no_symptoms' => User::where('corona_stage', 1)->count()];
 }
     public function userdata(Request $request){
-        request()->validate([
-            'age' => 'required',
-            'riskgroup' => 'required',
 
-        ]);
         $user = Auth::user();
         $user->age = $request->age;
         if($request->cofirmed =1)$user->corona_stage = 1;

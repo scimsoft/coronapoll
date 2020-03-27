@@ -24,8 +24,8 @@ return [
     'personal_data_buttom' => 'Allow us to use your location',
 
 
-    'age' => 'Your Age',
-    'riskgroup' => 'Are you in a risk group?',
+    'age' => 'Your Age (Optional)',
+    'riskgroup' => 'Are you in a risk group? (Optional)',
 
     'make_a_choice' => "Select an option",
     'lowrisk' => "Low Risk",
