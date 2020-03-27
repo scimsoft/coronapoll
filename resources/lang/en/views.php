@@ -3,11 +3,11 @@
 return [
 
     'guestwelcomename'=>'#0corona is an open-source initiatve',
-    'guestwelcometext'=>'#0corona is an open crowd source initiativa. <br> Our main objective is to obtain as much data as possible of the crowd.<br> age, risk group, symptoms and current location. Plot this data on a map and obtain infection heatpoints and safe zones.<br> Please colaborate. <br> more info gerrit.sevilla@gmail.com ',
+    'guestwelcometext'=>'We try to obtain real data of the people with light symptoms <br> We want to make public the data of the people passing the COVID_19 in there homes.<br> We think these data can be really usefull for users, investigators and govenrments in the understanding and stop the spread<br> Please colaborate. <br> more info gerrit.sevilla@gmail.com ',
 
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'We can stop the coronavirus together.',
-    'welcometext'=>'If we decide to share information, we can help avoid people in risk to come to areas with a bigger possibility to get contamed. <br> Please register and start sharing your condition. <br> All the information you share will be <bold>anonymous</bold>, and we will not share personal data with third-parties.<br><br> Login and see round you. ',
+    'welcometext'=>'If we decide to share information, we can help avoid people in risk to come to areas with a bigger possibility to get contaminated. <br> Please register and start sharing your condition. <br> All the information you share will be <bold>anonymous</bold>, and we will not share personal data with third-parties.<br><br> Login and see round you. ',
 
     'modeltitle'=>'Please help us STOP coronavirus',
     'modaltext'=>'If you want to see highrisk and low risk areas near your current location, please login, and colaborate',

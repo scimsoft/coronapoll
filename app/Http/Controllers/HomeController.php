@@ -7,6 +7,7 @@ use App\Symptom;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use function redirect;
 
 class HomeController extends Controller
@@ -32,8 +33,9 @@ class HomeController extends Controller
     public function index()
     {
         // Code here
-        if (Auth::user()->is_checked_in) {
 
+        Log::debug('checked in'.Auth::user()->is_checked_in);
+        if (Auth::user()->is_checked_in = 1) {
             return view('home',$this->getStatData() );
         } else {
             return view('checkin');
