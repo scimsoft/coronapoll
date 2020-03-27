@@ -233,7 +233,7 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.6,0",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
