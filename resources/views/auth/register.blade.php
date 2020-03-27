@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus onkeyup="duplicateName(this)">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -75,3 +75,31 @@
     </div>
 </div>
 @endsection
+@section('scripts')
+    <script>
+
+        function duplicateName(element) {
+            var d =document.getElementById('name');
+            var name = $(element).val();
+            $.ajax({
+                type: "POST",
+                url: '{{url('/checkname')}}',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    name: name},
+                dataType: "json",
+                success: function (res) {
+                    if (res.exists) {
+                        d.className += " is-invalid";
+
+                    } else {
+                        d.className += " is-valid";
+                    }
+                },
+                error: function (jqXHR, exception) {
+
+                }
+            });
+        }
+    </script>
+@stop

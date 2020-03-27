@@ -39,7 +39,7 @@ Route::post('/senddiagnose', 'HomeController@senddiagnose')->name('senddiagnose'
 });
 
 Auth::routes();
-
+Route::post('/checkname',['uses'=>'Auth\LoginController@checkname']);
 
 
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider');

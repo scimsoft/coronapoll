@@ -14,5 +14,15 @@ return [
     */
     'failed' => 'Estas credenciales no coinciden con nuestros registros.',
     'throttle' => 'Demasiados intentos de acceso. Por favor inténtelo de nuevo en :seconds segundos.',
+    'emailadressopcional' =>'Email (opcional)',
+    'password' => 'Contraseña',
+    'confirmpassword' => 'Confirmar Contraseña',
+
+    'logingoogle' => '>> Entra con Google',
+    'loginuser' => '>> Entra con nombre de usuario',
+    'loginusername' => 'Nombre de usuario',
+    'logincreateuser' => '>> Crear usuario neuvo'
+
+
 
 ];
