@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+
 use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
@@ -38,6 +41,11 @@ class LoginController extends Controller
         }
     }
 
+    public function username()
+    {
+        return 'name';
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -58,6 +66,17 @@ class LoginController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
+
+    public function checkname(Request $request){
+        $name = $request->input('name');
+
+        $isExists = User::where('name',$name)->first();
+        if($isExists){
+            return response()->json(array("exists" => true));
+        }else{
+            return response()->json(array("exists" => false));
+        }
+    }
     /**
      * Obtain the user information from Google.
      *

@@ -15,5 +15,13 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'emailadressopcional' =>'Email (optional)',
+    'password' => 'Password',
+    'confirmpassword' => 'Confirm Password',
+
+    'logingoogle' => '>> Enter with Google',
+    'loginuser' => '>> Enter with username',
+    'loginusername' => 'Username',
+    'logincreateuser' => '>> Create new user'
 
 ];
