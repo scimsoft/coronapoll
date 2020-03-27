@@ -31,7 +31,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/index') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <img src="images/icons/icon-36x36.png">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -66,9 +66,7 @@
                                         @endif
                                     @endforeach
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+
                                 </div>
                             </li>
 

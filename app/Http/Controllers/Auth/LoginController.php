@@ -34,7 +34,8 @@ class LoginController extends Controller
      */
     public function redirectTo(){
         // Code here
-        if(Auth::user()->isCheckedIn()) {
+        Log::debug('LOGON checked in'.Auth::user()->is_checked_in);
+        if(Auth::user()->is_checkin_in = 1) {
             return '/home';
         }else {
             return '/checkin';
