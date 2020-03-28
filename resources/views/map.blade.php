@@ -13,7 +13,7 @@
         <p class="h5"> @lang('views.guestwelcomename')</p>
 
         @lang('views.guestwelcometext')</p>
-        <a href="/login" class="btn btn-info">Login</a>
+        <a href="/login" class="btn btn-info">@lang('views.loginbutton')</a>
 
     </div>
 
@@ -54,7 +54,7 @@
                 @lang('views.modaltext')
             </div>
             <div class="modal-footer">
-                <a type="button" href="/login"  class="btn btn-primary " >Login</a>
+                <a type="button" href="/login"  class="btn btn-primary " >@lang('views.loginbutton')</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="map.setZoom({{$maxzoomlevel}});">Close</button>
 
             </div>

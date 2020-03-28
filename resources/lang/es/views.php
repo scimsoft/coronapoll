@@ -32,6 +32,15 @@ return [
     'mediumrisk' => "Riesgo",
     'highrisk' => "Mucho Riesgo",
     'confirmed' => '¿Usted ha echo una prueba y ha salido positivo?',
-    'checkindata' => 'Empezar'
+    'checkindata' => 'Empezar',
+
+    'sendbutton' => 'enviar',
+    'loginbutton' => 'entrar',
+
+    'entercough' => 'nivel de tos',
+    'entertempreture'  => 'temperature',
+    'entermusclepain' => 'dolor de cuerpo',
+    'enterbreath' => 'dificultades de respirar',
+
 
 ];

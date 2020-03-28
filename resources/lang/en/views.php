@@ -32,6 +32,15 @@ return [
     'mediumrisk' => "Medium Risk",
     'highrisk' => "High Risk",
     'confirmed' => 'Are you confirmed COVIP-19 patient?',
-    'checkindata' => 'Send your data'
+    'checkindata' => 'Send your data',
+
+
+    'sendbutton' => 'send',
+    'loginbutton' => 'enter',
+
+    'entercough' => 'level of cough',
+    'entertempreture'  => 'body tempreture',
+    'entermusclepain' => 'muscle pain',
+    'enterbreath' => 'breathing difficulties',
 
 ];

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Symptom;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
 
@@ -25,10 +27,11 @@ class MapController extends Controller
     }
 
     public function generalView(){
-//        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-//        $acceptLang = ['es', 'en', 'nl'];
-//        $lang = in_array($lang, $acceptLang) ? $lang : 'en';
-//        app()->call('App\Http\Controllers\LanguageController@switchLang', [$lang]);
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+
+        if (array_key_exists($lang, Config::get('languages'))) {
+            Session::put('applocale', $lang);
+        }
         return view('map',['zoomlevel'=>'2','maxzoomlevel'=>'4','latitude' => '40.409120', 'longitude' => '-3.704954','dataPoints' => $this->createGeneralHetamap()]);
 
 

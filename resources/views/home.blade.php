@@ -151,7 +151,7 @@
                         <input id="latitude" type="hidden" name="latitude" value="">
                         <input id="longitude" type="hidden" name="longitude" value="">
                         <div class="card">
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" class="btn btn-primary">@lang('views.sendbutton')</button>
                         </div>
 
                     </div>
