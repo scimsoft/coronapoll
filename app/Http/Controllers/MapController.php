@@ -21,7 +21,7 @@ class MapController extends Controller
         $id = Auth::user()->id;
         $myLatitude = $this->lastSymptom($id)->latitude;
         $myLongitude=$this->lastSymptom($id)->longitude;
-        return view('map',['zoomlevel'=>'14','maxzoomlevel'=>'22','latitude' => $myLatitude,'longitude' => $myLongitude,'dataPoints' => $this->createHeatmapDataPoints($myLatitude,$myLongitude,0)]);
+        return view('map',['zoomlevel'=>'14','maxzoomlevel'=>'18','latitude' => $myLatitude,'longitude' => $myLongitude,'dataPoints' => $this->createHeatmapDataPoints($myLatitude,$myLongitude,0)]);
     }
 
     public function generalView(){
