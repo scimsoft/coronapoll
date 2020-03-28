@@ -42,7 +42,7 @@
                 </div>
                 <div class="card-header " id="emailheader" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">@lang('auth.loginuser')</div>
 
-                <div class="card-body collapse" id="collapseTwo" aria-labelledby="emailheader" data-parent="#loginaccordion">
+                <div class="card-body collapse show" id="collapseTwo" aria-labelledby="emailheader" data-parent="#loginaccordion">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -110,7 +110,7 @@
                     <div class="card">
 
 
-                        <div class="card-body collapse" id="collapseThree" aria-labelledby="registerheader" data-parent="#loginaccordion">
+                        <div class="card-body collapse show" id="collapseThree" aria-labelledby="registerheader" data-parent="#loginaccordion">
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
 
