@@ -25,6 +25,10 @@ class MapController extends Controller
     }
 
     public function generalView(){
+//        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+//        $acceptLang = ['es', 'en', 'nl'];
+//        $lang = in_array($lang, $acceptLang) ? $lang : 'en';
+//        app()->call('App\Http\Controllers\LanguageController@switchLang', [$lang]);
         return view('map',['zoomlevel'=>'2','maxzoomlevel'=>'4','latitude' => '40.409120', 'longitude' => '-3.704954','dataPoints' => $this->createGeneralHetamap()]);
 
 
