@@ -24,12 +24,17 @@ class SymptomsMapController extends MapController
 
     public function myPosition()
     {
-        //$this->createHeatMapDataPointsConfirmed();
+
         $id = Auth::user()->id;
-        $myLatitude = $this->lastSymptom($id)->latitude;
-        $myLongitude = $this->lastSymptom($id)->longitude;
-        return view('map', ['zoomlevel' => '14', 'maxzoomlevel' => '18', 'latitude' => $myLatitude, 'longitude' => $myLongitude, 'dataPoints' => $this->createHeatMapFromSymptoms($myLatitude, $myLongitude, 0)]);
-    }
+        if($this->lastSymptom($id)->latitude == null){
+            return view('map', ['zoomlevel' => '2', 'maxzoomlevel' => '18', 'latitude' => 0, 'longitude' => 0, 'dataPoints' => $this->createHeatMapFromSymptoms(0, 0, 0)]);
+
+        }else {
+            $myLatitude = $this->lastSymptom($id)->latitude;
+            $myLongitude = $this->lastSymptom($id)->longitude;
+            return view('map', ['zoomlevel' => '14', 'maxzoomlevel' => '18', 'latitude' => $myLatitude, 'longitude' => $myLongitude, 'dataPoints' => $this->createHeatMapFromSymptoms($myLatitude, $myLongitude, 0)]);
+        }
+        }
 
     private function lastSymptom(int $id)
     {
@@ -65,20 +70,7 @@ class SymptomsMapController extends MapController
         return $this->heatmap_points;
     }
 
-    protected function createHeatMapDataPointsConfirmed()
-    {
-        $csv = array_map('str_getcsv', file('externaldata/03-27-2020.csv'));
-        foreach ($csv as $csvline) {
-            array_push($this->heatmap_points, [
-                $csvline[6],
-                $csvline[5],
-                3,
-                $csvline[7]*10
-            ]);
 
-
-            }
-        }
 
 
     private function getUserData()

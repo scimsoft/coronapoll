@@ -67,6 +67,7 @@
 <script>
     var map;
     var heatmap ;
+    var markerCluster;
 
     function initMap() {
 
@@ -113,7 +114,7 @@
             data: heatMapData
         });
         var gradient = [
-            'rgba(0, 255, 255, 1)',
+            'rgba(0, 255, 255, 0)',
             'rgba(0, 255, 255, 1)',
             'rgba(0, 191, 255, 1)',
             'rgba(0, 127, 255, 1)',
