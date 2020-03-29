@@ -81,6 +81,8 @@ class HomeController extends Controller
         $symptom->ip = $request->ip();
         $symptom->latitude = $request->latitude;
         $symptom->longitude = $request->longitude;
+        //LOCATION IP == 1;
+        $symptom->location = $request->position;
 
         $symptom->temp = $fever;
         $symptom->cough = $cough;

@@ -150,6 +150,7 @@
                         </div>
                         <input id="latitude" type="hidden" name="latitude" value="">
                         <input id="longitude" type="hidden" name="longitude" value="">
+                        <input id="position" type="hidden" name="position" value="">
                         <div class="card">
                             <button type="submit" class="btn btn-primary">@lang('views.sendbutton')</button>
                         </div>
@@ -184,6 +185,9 @@
                                     success: function(json) {
                                         document.getElementById("latitude").value = json.latitude;
                                         document.getElementById("longitude").value = json.longitude;
+                                        //LOCATION IP == 1;
+                                        document.getElementById("position").value = 1;
+
 
                                     }
                                 });
