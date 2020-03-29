@@ -7,10 +7,10 @@ return [
 
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'We can stop the coronavirus together.',
-    'welcometext'=>'If we decide to share information, we can help avoid people in risk to come to high risk areas. <br> Please register and start sharing your condition. <br> All the information you share will be <bold>anonymous</bold>, and we will not share personal data with third-parties.<br><br> PLeaase Login. ',
+    'welcometext'=>'Please tell us if you are at home coping with the COVID-19 infection.  In 0corona we try to help the investigations about the ‘invisible’ spread. <br> Login with your google account or create a anonymous account, <br> Please allow us to use your location for statsitaical spreading data.</bfr> ',
 
     'modeltitle'=>'Please help us STOP coronavirus',
-    'modaltext'=>'If you want to see highrisk and low risk areas near your current location, please login, and colaborate',
+    'modaltext'=>'Please tell us if you are at home coping with the COVID-19 infection.  In 0corona we try to help the investigations about the ‘invisible’ spread. <br> login with your google account or create a new user.',
 
 
 
@@ -39,7 +39,7 @@ return [
     'loginbutton' => 'enter',
 
     'entercough' => 'level of cough',
-    'entertempreture'  => 'body tempreture',
+    'entertempreture'  => 'body temperature',
     'entermusclepain' => 'muscle pain',
     'enterbreath' => 'breathing difficulties',
 

@@ -30,7 +30,7 @@ return [
     'highfever' => '>102',
 
     'Auto Test' => 'Auto Test',
-    'Temperatura' => 'What is your temprature?',
+    'Temperatura' => 'What is your temperature?',
     'Cough' => 'Do you have dry cough?',
     'Shortness of Breath' => 'Do you have difficulty breathing?',
     'Muscle pain' => 'Do you have muscle pains?'
