@@ -24,7 +24,7 @@ class SymptomsMapController extends MapController
 
     public function myPosition()
     {
-        $this->createHeatMapDataPointsConfirmed();
+        //$this->createHeatMapDataPointsConfirmed();
         $id = Auth::user()->id;
         $myLatitude = $this->lastSymptom($id)->latitude;
         $myLongitude = $this->lastSymptom($id)->longitude;
