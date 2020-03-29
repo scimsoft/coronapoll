@@ -4,11 +4,11 @@ return [
 
     'guestwelcomename'=>'#0corona es un proyecto solidario',
 
-    'guestwelcometext'=>'Buscamos obtener datos reales sobre los sintomas de la población. Queremos visibilizar todas las personas que pueden estar pasando el COVID19 en su hogar. Además creemos que estos datos podrian ayudar a disminuir el numero de contagios <br> mas información: gerrit.sevilla@gmail.com',
+    'guestwelcometext'=>'Buscamos obtener datos reales sobre los sintomas de la población. Queremos visibilizar todas las personas que pueden estar pasando el COVID19 en su hogar. Además creemos que estos datos podrian ayudar a disminuir el numero de contagios.  <br> mas información: gerrit.sevilla@gmail.com',
 
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'Podemos parar la expansión del virus juntos.',
-    'welcometext'=>'Si decidimos compartir la información podemos ayudar a las personas que tienen mas riesgo no acudir a sitios o zonas contagiadias. <br> 1. Registrase o entrar con Google <br> 2. Permita el aplicacion usar tu ubicacion, pulsando el boton.',
+    'welcometext'=>'0corona.com ayúda a saber donde estan las personas posiblemente pasando el COVID-19 en sus casa.<br> Entra y participa, dejar saber tus sintomas. <br>Entra con tu cuenta de google o crea una cuenta anonimo si lo prefieres. <br> Porfavor sí permitanos usar tu ubicacion cuando se pide,<br> Gracias a todos lo paramos ',
 
     'modeltitle'=>'AYUDANOS a PARAR el coronavirus',
     'modaltext'=>'Si quieres ver las diferentes zonas de riesgos, unete y colabora indicando tu estado de riesgo y salud.',
