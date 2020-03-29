@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Config;
 
 Route::middleware(['guest'])->group(function () {
 
-    Route::get('/', 'MapController@generalView');
+    Route::get('/', 'GuestMapController@generalView');
 
 });
 
@@ -36,7 +36,7 @@ Route::post('/senddiagnose', 'HomeController@senddiagnose')->name('senddiagnose'
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/maps', 'MapController@myPosition');
+Route::get('/maps', 'SymptomsMapController@myPosition');
 
 
 Auth::routes();

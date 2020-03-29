@@ -95,7 +95,7 @@ class HomeController extends Controller
         $user->corona_stage = $coranastage;
         $user->save();
 
-        return redirect()->action('MapController@myPosition' );
+        return redirect()->action('SymptomsMapController@myPosition' );
 
 
 

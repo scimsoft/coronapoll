@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'near_you_intro' => 'In a radius of <strong>5</strong> km you have:',
+    'near_you_intro' => 'At <strong>3</strong> mi you have:',
     'confirmed_label' => 'confirmed cases.',
     'very_suspicious_label'  => 'with a lot of symptoms',
-    'little_suspicious_label' => 'with few symptoms',
+    'little_suspicious_label' => 'with a few symptoms',
     'no_suspicous_label' => 'with no symptoms',
 
 
@@ -25,9 +25,9 @@ return [
     'alittle' => 'Some',
     'alot' => 'A lot',
 
-    'normaltemp' => '<38',
-    'fever' => '38-39',
-    'highfever' => '>39',
+    'normaltemp' => '<100',
+    'fever' => '100-102',
+    'highfever' => '>102',
 
     'Auto Test' => 'Auto Test',
     'Temperatura' => 'What is your temperature?',

@@ -8,7 +8,7 @@ return [
 
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'Podemos parar la expansión del virus juntos.',
-    'welcometext'=>'0corona.com ayúda a saber donde estan las personas posiblemente pasando el COVID-19 en sus casa.<br> Entra y participa, dejar saber tus sintomas. <br>Entra con tu cuenta de google o crea una cuenta anonimo si lo prefieres. <br> Porfavor sí permitanos usar tu ubicacion cuando se pide,<br> Gracias a todos lo paramos ',
+    'welcometext'=>'Ayuda y deja saber donde estan las personas pasando el COVID-19 en sus casas.<br> Entra y participa, dejar saber tus sintomas. <br>Entra con tu cuenta de google o crea una cuenta. <br> Para mejores resultados permítenos usar tu ubicacion,<br> Gracias entre tod@s lo paramos ',
 
     'modeltitle'=>'AYUDANOS a PARAR el coronavirus',
     'modaltext'=>'Si quieres ver las diferentes zonas de riesgos, unete y colabora indicando tu estado de riesgo y salud.',

@@ -86,6 +86,7 @@
                 $('#myModal').modal('show');
             }
         });
+
         initHeatMap();
 
 
@@ -102,16 +103,17 @@
             var tempLat = mydatapoints[i][1];  // was [0]
             var tempLong = mydatapoints[i][0];
             var mystage= mydatapoints[i][2];
-            var tempVar = new google.maps.LatLng(tempLat, tempLong);
+            var weight = mydatapoints[i][3];
+
             if(mystage == $mycasefilter) {
-                heatMapData.push(new google.maps.LatLng(tempLat, tempLong, mystage));
+                heatMapData.push(new google.maps.LatLng(tempLat, tempLong, weight));
             }
         }
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: heatMapData
         });
         var gradient = [
-            'rgba(0, 255, 255, 0)',
+            'rgba(0, 255, 255, 1)',
             'rgba(0, 255, 255, 1)',
             'rgba(0, 191, 255, 1)',
             'rgba(0, 127, 255, 1)',
@@ -126,9 +128,11 @@
             'rgba(191, 0, 31, 1)',
             'rgba(255, 0, 0, 1)'
         ]
-        heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+        //heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
         heatmap.set('radius', heatmap.get('radius') ? null : 20);
+
         heatmap.setMap(map);
+
     }
     function setFilterValue(myvalue){
         heatmap.setMap(null)
