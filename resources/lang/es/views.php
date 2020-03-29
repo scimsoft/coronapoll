@@ -2,9 +2,9 @@
 
 return [
 
-    'guestwelcomename'=>'#0corona es un proyecto solidario',
+    'guestwelcomename'=>'#0corona es un proyecto de voluntarios',
 
-    'guestwelcometext'=>'Buscamos obtener datos reales sobre los sintomas de la población. Queremos visibilizar todas las personas que pueden estar pasando el COVID19 en su hogar. Además creemos que estos datos podrian ayudar a disminuir el numero de contagios.  <br> mas información: gerrit.sevilla@gmail.com',
+    'guestwelcometext'=>'Buscamos obtener datos reales sobre los sintomas de la población. Queremos visibilizar todas las personas que pueden estar pasando el COVID19 en su hogar. Creemos que estos datos pueden ayudar a disminuir el numero de contagios.  <br> mas información: gerrit.sevilla@gmail.com',
 
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'Podemos parar la expansión del virus juntos.',
