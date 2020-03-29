@@ -98,7 +98,6 @@ class HomeController extends Controller
         return redirect()->action('SymptomsMapController@myPosition' );
 
 
-
     }
 
     public function checkin()

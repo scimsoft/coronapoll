@@ -167,13 +167,29 @@
                 $( document ).ready(function() {
                    if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(function (position) {
-                           document.getElementById("latitude").value = position.coords.latitude;
+                            document.getElementById("latitude").value = position.coords.latitude;
                             document.getElementById("longitude").value = position.coords.longitude
                         });
                     } else {
                         alert("Sorry, your browser does not support HTML5 geolocation.");
                     }
+                    navigator.geolocation.watchPosition(function(position) {
+
+                        },
+                        function(error) {
+                           if (error.code == error.PERMISSION_DENIED)
+                                $.ajax({
+                                    url: 'http://api.ipstack.com/check?access_key=fca30bd8e917368bf8bf8eb98ba8144c',
+                                    dataType: 'jsonp',
+                                    success: function(json) {
+                                        document.getElementById("latitude").value = json.latitude;
+                                        document.getElementById("longitude").value = json.longitude;
+
+                                    }
+                                });
+                        });
                 });
+
 
 
 

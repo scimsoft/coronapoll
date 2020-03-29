@@ -32,7 +32,8 @@ class SymptomsMapController extends MapController
         }else {
             $myLatitude = $this->lastSymptom($id)->latitude;
             $myLongitude = $this->lastSymptom($id)->longitude;
-            return view('map', ['zoomlevel' => '14', 'maxzoomlevel' => '18', 'latitude' => $myLatitude, 'longitude' => $myLongitude, 'dataPoints' => $this->createHeatMapFromSymptoms($myLatitude, $myLongitude, 0)]);
+            $dataPoints = $this->createHeatMapFromSymptoms($myLatitude, $myLongitude, 0);
+            return view('map', ['zoomlevel' => '14', 'maxzoomlevel' => '18', 'latitude' => $myLatitude, 'longitude' => $myLongitude, 'dataPoints' => $dataPoints]);
         }
         }
 
