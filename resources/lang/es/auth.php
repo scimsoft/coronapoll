@@ -18,11 +18,14 @@ return [
     'password' => 'Contraseña',
     'confirmpassword' => 'Confirmar Contraseña',
 
-    'logingoogle' => '>> Entra con Google',
-    'loginuser' => '>> Entra con nombre de usuario',
+    'logingoogle' => 'Entra con Google',
+    'loginuser' => 'Entra con tu usuario',
     'loginusername' => 'Nombre de usuario',
-    'logincreateuser' => '>> Crear usuario neuvo'
+    'logincreateuser' => 'Crear un usuario neuvo',
 
+    'register'=>'Registrar',
+    'remember'=>'Recuerdame',
+    'login'=>'Entra',
 
 
 ];

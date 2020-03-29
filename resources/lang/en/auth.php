@@ -19,9 +19,14 @@ return [
     'password' => 'Password',
     'confirmpassword' => 'Confirm Password',
 
-    'logingoogle' => '>> Enter with Google',
-    'loginuser' => '>> Enter with username',
+    'logingoogle' => 'Enter with Google',
+    'loginuser' => 'Enter with your username',
     'loginusername' => 'Username',
-    'logincreateuser' => '>> Create new user'
+    'logincreateuser' => 'Create a new username',
+
+    'register'=>'Register',
+    'remember'=>'Remember me',
+    'login'=>'Login',
+
 
 ];

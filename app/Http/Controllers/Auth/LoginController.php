@@ -35,7 +35,7 @@ class LoginController extends Controller
     public function redirectTo(){
         // Code here
         Log::debug('LOGON checked in'.Auth::user()->is_checked_in);
-        if(Auth::user()->is_checkin_in = 1) {
+        if(Auth::user()->is_checkin_in == 1) {
             return '/home';
         }else {
             return '/checkin';
@@ -69,7 +69,7 @@ class LoginController extends Controller
 
 
     public function checkname(Request $request){
-        $name = $request->input('name');
+        $name = $request->input('registername');
 
         $isExists = User::where('name',$name)->first();
         if($isExists){
