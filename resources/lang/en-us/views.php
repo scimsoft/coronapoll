@@ -7,7 +7,7 @@ return [
 
     'welcomeheader'=>'STOP COVID-19 ',
     'welcomename'=>'We can stop the coronavirus together.',
-    'welcometext'=>'Please tell us if you are at home coping with the COVID-19 infection. <br> 0corona tries to help the investigations about the ‘invisible’ spread. <br> Login with your google account or create a anonymous account, <br> Please allow us to use your location for statsitaical spreading data.</bfr> ',
+    'welcometext'=>'Please tell us if you are noticing COVID-19 symptoms. <br> We are trying to collect data about people with the COVID-19 at their homes. <br> Login with your google account or create an account, <br> Please allow us to use your location for statistical spreading data.</br> ',
 
     'modeltitle'=>'Please help us STOP coronavirus',
     'modaltext'=>'Please tell us if you are at home coping with the COVID-19 infection.  In 0corona we try to help the investigations about the ‘invisible’ spread. <br> login with your google account or create a new user.',
