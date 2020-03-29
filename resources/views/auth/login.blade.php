@@ -122,7 +122,7 @@
                                         class="fa fa-edit"></span> @lang('auth.logincreateuser') </a></div>
 
 
-                            <div class="card-body collapse @error('registername')show @enderror" id="collapseThree" aria-labelledby="registerheader"
+                            <div class="card-body collapse @error('registername')show @enderror @error('registeremail')show @enderror @error('registerpassword')show @enderror" id="collapseThree" aria-labelledby="registerheader"
                                  data-parent="#loginaccordion">
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
@@ -133,7 +133,7 @@
 
                                         <div class="col-md-6">
                                             <input id="registername" type="text" class="form-control " name="registername"
-                                                   value="{{ old('name') }}" required autocomplete="name" autofocus
+                                                   value="{{ old('registername') }}" required autocomplete="name" autofocus
                                                    onkeyup="duplicateName(this)">
 
                                             @error('registername')
