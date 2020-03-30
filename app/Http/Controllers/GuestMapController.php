@@ -10,7 +10,11 @@ class GuestMapController extends MapController
 {
     //
     public function generalView(){
-        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        if($_SERVER['HTTP_ACCEPT_LANGUAGE']) {
+            $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        }else{
+            $lang ='en';
+        }
 
         if (array_key_exists($lang, Config::get('languages'))) {
             Session::put('applocale', $lang);

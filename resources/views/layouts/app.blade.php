@@ -113,6 +113,9 @@
             @yield('content')
         </main>
     </div>
+    <div class="">
+    @include('layouts.footer');
+    </div>
     @yield('scripts');
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161664478-1"></script>
