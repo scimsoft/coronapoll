@@ -26,7 +26,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+
+    </style>
+
     @laravelPWA
+
 </head>
 <body>
     <div id="app">
@@ -111,14 +116,26 @@
 
         <main class="py-4">
             @yield('content')
+
         </main>
+
+            <div class="footer">
+                <div class="privacy">
+                <a class="btn btn-light" href="https://github.com/scimsoft/coronapoll">GitHub Source </a>
+                <a href="https://www.iubenda.com/privacy-policy/62552887" class="btn btn-light" title="Privacy Policy ">
+                    Privacy Policy</a>
+
+                <a class="btn btn-light">0corona.com 2020</a>
+                </div>
+            </div>
+
+
     </div>
-    <div class="">
-    @include('layouts.footer');
-    </div>
+
     @yield('scripts');
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161664478-1"></script>
+    <script type="text/javascript " src="https://cdn.iubenda.com/iubenda.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
