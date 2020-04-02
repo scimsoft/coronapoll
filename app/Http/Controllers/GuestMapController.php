@@ -32,7 +32,7 @@ class GuestMapController extends Controller
     public function setSessionLanguage()
     {
         Log::debug('entering in Language detection');
-        if ($_SERVER['HTTP_ACCEPT_LANGUAGE']) {
+        if (isset($_SERVER["HTTP_ACCEPT_LANGUAGE"])) {
             $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
             Log::debug('Language detected: '.$lang);
         } else {

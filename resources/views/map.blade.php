@@ -96,11 +96,13 @@
     var map;
     var heatmap ;
     var markerCluster;
-    document.addEventListener('DOMContentLoaded', (event) => {
-        setTimeout(function(){
-            $('#shareModel').modal('show');
-        }, 10000);
-    });
+    @if (Auth::check())
+        document.addEventListener('DOMContentLoaded', (event) => {
+            setTimeout(function(){
+                $('#shareModel').modal('show');
+            }, 10000);
+        });
+    @endif
 
     function initMap() {
 
