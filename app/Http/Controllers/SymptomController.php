@@ -26,11 +26,10 @@ class SymptomController extends Controller
 
     public function index()
     {
-        //
+        //TODO
         $id = Auth::user()->id;
         $currentuser = User::find($id);
-
-        Log::debug('SymptomController index(): $currentuser is checkin =='.$currentuser->is_checked_in);
+        Log::debug('SymptomController index(): Auth::user()-> is checkin =='.Auth::user()->is_checked_in);
         if($currentuser->is_checked_in == 1) {
             return view('symptoms',$this->getStatData() );
         }else {

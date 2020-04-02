@@ -12,15 +12,18 @@ return [
     'modeltitle'=>'Please help us STOP coronavirus',
     'modaltext'=>'Please tell us if you are at home coping with the COVID-19 infection.  In 0corona we try to help the investigations about the ‘invisible’ spread. <br> login with your google account or create a new user.',
 
+    'positionmodeltitle'=>'Please help us STOP coronavirus',
+    'positionmodaltext'=>'Plaesa allow us to use your location! <br> Your location is very important to be able to tell you how many persons with symptoms you have neer your current position! <br> Your browser will pop up a message to confirm.',
+    'positionmodalbutton' => 'I understand',
 
 
     'personal_data_anonymous' => 'Your Anonymousity',
 
     'personal_data_header' => 'Personal Data',
     'personal_data_intro' => 'Please permit us use your data anonymous',
-    'personal_data_warning' => 'The data you enter next, will be treated completly anonymous and wont be shared with third parties.',
+    'personal_data_warning' => 'The data you enter will not be shared with third parties.',
     'personal_data_statitics' => 'The data will only be used for statistical purposes',
-    'personal_data_location' => 'Please allow the use of your location for spreading analysis purposes, click the button.',
+    'personal_data_location' => 'Your input can be very important to understand how the virus spreads.',
     'personal_data_buttom' => 'Allow us to use your location',
 
 

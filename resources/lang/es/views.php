@@ -13,13 +13,16 @@ return [
     'modeltitle'=>'AYUDANOS a PARAR el coronavirus',
     'modaltext'=>'Si quieres ver las diferentes zonas de riesgos, unete y colabora indicando tu estado de riesgo y salud.',
 
+    'positionmodeltitle'=>'AYUDANOS a PARAR el coronavirus',
+    'positionmodaltext'=>'Porfavor dejanos usar tu ubicacion! <br> Tu ubicacion es muy importante para poder avisar de personas con sympomas cerca de tu ubicacion! <br> Tu explorador solicitara permiso.',
+    'positionmodalbutton' => 'I understand',
 
     'personal_data_anonymous' => 'Your Anonymousity',
 
     'personal_data_header' => 'Datos Personales',
-    'personal_data_intro' => 'Sus datos serán completamente anonimos',
+    'personal_data_intro' => 'Sus datos serán anonimos',
     'personal_data_warning' => 'Los datos que introduces a continuacion no se comparten con terceros y solo se usan con fines estadisticos.',
-    'personal_data_statitics' => '',
+    'personal_data_statitics' => 'Usamos tus datos para estudiar el contagio del virus. ',
     'personal_data_location' => 'Necesitamos que des permiso para usar tu localizacion ',
     'personal_data_buttom' => 'Doy Permiso de usar mi localizacion',
 
@@ -31,7 +34,7 @@ return [
     'lowrisk' => "Poco Riesgo",
     'mediumrisk' => "Riesgo",
     'highrisk' => "Mucho Riesgo",
-    'confirmed' => '¿Usted ha echo una prueba y ha salido positivo?',
+    'confirmed' => '¿Eres positivo confirmado de COVID-19?',
     'checkindata' => 'Empezar',
 
     'sendbutton' => 'enviar',

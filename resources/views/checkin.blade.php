@@ -27,8 +27,7 @@
                             <p class="h6"><strong>3</strong> @lang('views.personal_data_location')</p>
 
                             <p class="h6">
-                                <button type="button" class="btn btn-success center"
-                                        onclick="showPosition();">    @lang('views.personal_data_buttom')</button>
+
                             </p>
                         </div>
 
@@ -38,7 +37,7 @@
                 <div class="card " >
                     <div class="card-header font-weight-bold " >@lang('views.personal_data_header')</div>
                     <div class="card-body">
-                    <form method="post" action="/updateuserdata" enctype="multipart/form-data">
+                    <form id='checkindataform' method="post" action="/updateuserdata" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group row">
                             <label for="titleid" class="col-sm-5 col-form-label">@lang('views.age')</label>
@@ -85,7 +84,7 @@
 <br>
                         <div class="form-group row ">
                             <div class="col-md-10">
-                                <button type="submit" class="btn btn-primary">@lang('views.checkindata')</button>
+                                <button type="submit" class="btn btn-primary" onmousedown="$('#AllowPositionModal').modal('show');$('#checkindataform').submit();">@lang('views.checkindata')</button>
                             </div>
                         </div>
                     </form>
@@ -93,6 +92,26 @@
 
                     </div>
 
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="AllowPositionModal" tabindex="-1" role="modal" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="images/icons/icon-36x36.png">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><span>    </span>@lang('views.positionmodeltitle')</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        @lang('views.positionmodaltext')
+                    </div>
+                    <div class="modal-footer">
+                        <a type="button" href="/login"  class="btn btn-primary " data-dismiss="modal" onclick="showPosition();">@lang('views.positionmodalbutton')</a>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,7 +125,7 @@
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-                    alert(positionInfo);
+
                 });
             } else {
                 alert("Sorry, your browser does not support HTML5 geolocation.");

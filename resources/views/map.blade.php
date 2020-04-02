@@ -43,7 +43,7 @@
 
 @endif
 
-<div class="modal fade" id="myModal" tabindex="-1" role="modal" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="maxZoomModal" tabindex="-1" role="modal" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -87,7 +87,7 @@
         google.maps.event.addListener(map, 'zoom_changed', function() {
             if (map.getZoom() > {{$maxzoomlevel}}) {
                 @guest
-                    $('#myModal').modal('show');
+                    $('#maxZoomModal').modal('show');
                 @endguest
                 map.setZoom({{$maxzoomlevel}});
             }
