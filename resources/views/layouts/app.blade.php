@@ -41,7 +41,25 @@
                     <img src="images/icons/icon-36x36.png">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a href="https://wa.me/?text=STOP+coronavirus+https%3A%2F%2F0corona.com%2F"><img src="images/whatsapp.png"> </a>
+
+
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn  " data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <img src="images/share_share.png" width="20px">
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item btn btn-outline-success" href="https://wa.me/?text=STOP+coronavirus+https%3A%2F%2F0corona.com%2F" target="_blank"><img src="images/share_whatsapp.png" width="24px"> Whatsapp</a>
+                        <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u=https://0corona.com" target="_blank"><img src="images/share_facebook.png" width="24px">  Facebook</a>
+                        <a class="dropdown-item" href="https://twitter.com/home?status=https://0corona.com " target="_blank"><img src="images/share_twitter.png" width="24px">  Twitter</a>
+                        <a class="dropdown-item" href="mailto:info@example.com?&subject=&body=https://0corona.com " target="_blank"><img src="images/share_email.png" width="24px">  Email</a>
+
+                    </div>
+                </div>
+
+
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

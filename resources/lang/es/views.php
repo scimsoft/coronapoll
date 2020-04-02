@@ -17,6 +17,9 @@ return [
     'positionmodaltext'=>'Porfavor dejanos usar tu ubicacion! <br> Tu ubicacion es muy importante para poder avisar de personas con sympomas cerca de tu ubicacion! <br> Tu explorador solicitara permiso.',
     'positionmodalbutton' => 'I understand',
 
+    'sharemodeltitle'=>'Comparte con tus contactos',
+    'sharemodaltext'=>'Este pagina es mucha mas util si se comparte con tu familia, amigos, vecinos, colegas. <br><br> <b>Use el boton de compartir</b> en la parte de arriba de la pagina. <br><br> Por favor',
+
     'personal_data_anonymous' => 'Your Anonymousity',
 
     'personal_data_header' => 'Datos Personales',

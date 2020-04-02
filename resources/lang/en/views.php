@@ -16,6 +16,9 @@ return [
     'positionmodaltext'=>'Plaesa allow us to use your location! <br> Your location is very important to be able to tell you how many persons with symptoms you have neer your current position! <br> Your browser will pop up a message to confirm.',
     'positionmodalbutton' => 'I understand',
 
+    'sharemodeltitle'=>'Share this page with all your contacts',
+    'sharemodaltext'=>'This page will be much more usefull with all your family, friends, neighbours, coworkers, etc. participating. <br><br> <b>Use the share buttons</b> on the top toolbar to share this page on your social networks. <br><br> Please',
+
     'personal_data_anonymous' => 'Your Anonymousity',
 
     'personal_data_header' => 'Personal Data',

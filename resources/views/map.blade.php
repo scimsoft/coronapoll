@@ -64,12 +64,43 @@
     </div>
 </div>
 
+<div class="modal fade" id="shareModel" tabindex="-1" role="modal" aria-labelledby="shareModelCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="images/icons/icon-36x36.png">
+                <h5 class="modal-title" id="shareModelLongTitle">@lang('views.sharemodeltitle')</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                    <div class="center"> <img src="images/share_all.png" height="32px"></div>
+
+                @lang('views.sharemodaltext')
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 @section('scripts')
 <script>
     var map;
     var heatmap ;
     var markerCluster;
+    document.addEventListener('DOMContentLoaded', (event) => {
+        setTimeout(function(){
+            $('#shareModel').modal('show');
+        }, 10000);
+    });
 
     function initMap() {
 
