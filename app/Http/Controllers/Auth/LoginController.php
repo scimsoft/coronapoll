@@ -32,15 +32,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    public function redirectTo(){
-        // Code here
-        Log::debug('LOGON checked in'.Auth::user()->is_checked_in);
-        if(Auth::user()->is_checkin_in == 1) {
-            return '/home';
-        }else {
-            return '/checkin';
-        }
-    }
+
 
     public function username()
     {
@@ -69,8 +61,9 @@ class LoginController extends Controller
 
 
     public function checkname(Request $request){
-        $name = $request->input('registername');
 
+        $name = $request->input('name');
+        Log::debug('entering checkname with name: '.$name);
         $isExists = User::where('name',$name)->first();
         if($isExists){
             return response()->json(array("exists" => true));
@@ -112,6 +105,8 @@ class LoginController extends Controller
             $newUser->save();
             auth()->login($newUser, true);
         }
-        return redirect()->to('/home');
+        return redirect()->to('/symptoms');
     }
+
+
 }

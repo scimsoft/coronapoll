@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //eprotected $redirectTo = '/checkin';
 
     /**
      * Create a new controller instance.
@@ -51,8 +53,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'registername' => ['required', 'string', 'max:255'],
-            'registeremail' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
+            'registername' => ['required', 'string', 'max:255', 'unique:users,name'],
+            'registeremail' => ['nullable', 'string', 'email', 'max:255', 'unique:users,email'],
             'registerpassword' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
@@ -73,4 +75,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['registerpassword']),
         ]);
     }
+
+
+
 }

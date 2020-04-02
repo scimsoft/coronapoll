@@ -3,18 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Symptom;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class SymptomController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     *
      */
+
+
     public function index()
     {
         //
+        $id = Auth::user()->id;
+        $currentuser = User::find($id);
+
+        Log::debug('SymptomController index(): $currentuser is checkin =='.$currentuser->is_checked_in);
+        if($currentuser->is_checked_in == 1) {
+            return view('symptoms',$this->getStatData() );
+        }else {
+            Log::debug('SymptomController:  return redirect()->route(checkin)');
+            return redirect()->route('checkin');
+        }
+
+
     }
 
     /**
@@ -22,10 +46,7 @@ class SymptomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -33,9 +54,43 @@ class SymptomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function create(Request $request)
     {
         //
+        request()->validate([
+            'temprature' => 'required',
+            'cough' => 'required',
+            'breath' => 'required',
+            'muscle' => 'required',
+        ]);
+
+        $fever = $request->temprature;
+        $cough = $request->cough;
+        $breathShortness = $request->breath;
+        $musclePain = $request->muscle;
+
+        $symptom = new Symptom();
+        $symptom->user_id = Auth::user()->id;
+        $symptom->ip = $request->ip();
+        $symptom->latitude = $request->latitude;
+        $symptom->longitude = $request->longitude;
+        //LOCATION IP == 1;
+        $symptom->location = $request->position;
+
+        $symptom->temp = $fever;
+        $symptom->cough = $cough;
+        $symptom->breathShortness = $breathShortness;
+        $symptom->musclePain = $musclePain;
+        $symptom->save();
+
+        $coranastage = round((float)(($breathShortness*3)+($fever*3)+($cough*2)+($musclePain))/9);
+        //$coranastage =$breathShortness * 3;
+
+        $user = Auth::user();
+        $user->corona_stage = $coranastage;
+        $user->save();
+
+        return redirect()->action('SymptomsMapController@myPosition' );
     }
 
     /**
@@ -81,5 +136,21 @@ class SymptomController extends Controller
     public function destroy(Symptom $symptom)
     {
         //
+    }
+
+    public function senddiagnose(Request $request){
+
+
+
+
+    }
+    private function getStatData(){
+        Log::debug('SymptomController getStatData()');
+
+
+        return ['patient_confirmed' => User::where('corona_stage', 4)->count(),
+            'patient_heavy_symptoms' => User::where('corona_stage', 3)->count(),
+            'patient_light_symptoms' => User::where('corona_stage', 2)->count(),
+            'patient_no_symptoms' => User::where('corona_stage', 1)->count()];
     }
 }

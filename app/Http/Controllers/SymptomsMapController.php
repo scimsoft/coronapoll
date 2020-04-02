@@ -12,10 +12,16 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
 
-class SymptomsMapController extends MapController
+class SymptomsMapController extends Controller
 {
     //
+
     protected $heatmap_points = [];
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
