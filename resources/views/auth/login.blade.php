@@ -128,11 +128,11 @@
                                     @csrf
 
                                     <div class="form-group row">
-                                        <label for="name"
+                                        <label for="registername"
                                                class="col-md-4 col-form-label text-md-right">@lang('auth.loginusername')</label>
 
                                         <div class="col-md-6">
-                                            <input id="registername" type="text" class="form-control " name="registername"
+                                            <input id="registername" type="text" class="form-control @error('registername') is-invalid @enderror" name="registername"
                                                    value="{{ old('registername') }}" required autocomplete="name" autofocus
                                                    onkeyup="duplicateName(this)">
 
@@ -212,6 +212,7 @@
                 function duplicateName(element) {
                     var d = document.getElementById('registername');
                     var name = $(element).val();
+
                     $.ajax({
                         type: "POST",
                         url: '{{url('/checkname')}}',

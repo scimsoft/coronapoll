@@ -38,7 +38,7 @@
                 <div class="card " >
                     <div class="card-header font-weight-bold " >@lang('views.personal_data_header')</div>
                     <div class="card-body">
-                    <form method="post" action="/userdata" enctype="multipart/form-data">
+                    <form method="post" action="/updateuserdata" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group row">
                             <label for="titleid" class="col-sm-5 col-form-label">@lang('views.age')</label>

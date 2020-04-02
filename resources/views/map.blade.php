@@ -6,41 +6,44 @@
 <div id="map"></div>
 <input type="hidden" id="casefilter" value="3">
 <br>
+
+
 @guest
-<div class="card">
-<div class="card-body">
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-        <p class="h5"> @lang('views.guestwelcomename')</p>
+    <div class="card">
+        <div class="card-body">
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <p class="h5"> @lang('views.guestwelcomename')</p>
+                @lang('views.guestwelcometext')</p>
+                <a href="/login" class="btn btn-info">@lang('views.loginbutton')</a>
 
-        @lang('views.guestwelcometext')</p>
-        <a href="/login" class="btn btn-info">@lang('views.loginbutton')</a>
+            </div>
 
+        </div>
     </div>
-
-</div>
-</div>
 @endguest
+
 @if (Auth::check())
 
-<div class="btn-group" data-toggle="buttons">
+    <div class="btn-group" data-toggle="buttons">
 
-    <label class="btn btn-outline-success center form-check-label" >
-        <input class="form-check-input" type="radio" name="muscle" id="option1"
-               autocomplete="off" value="1" onclick="setFilterValue(1);">
-        @lang('views.lowrisk')
-    </label>
-    <label class="btn btn-outline-warning center form-check-label" >
-        <input class="form-check-input" type="radio" name="muscle" id="option2"
-               autocomplete="off" value="2" onclick="setFilterValue(2);"> @lang('views.mediumrisk')
-    </label>
-    <label class="btn btn-outline-danger center form-check-label" >
-        <input class="form-check-input" type="radio" name="muscle" id="option3"
-               autocomplete="off" value="3"onclick="setFilterValue(3);"> @lang('views.highrisk')
-    </label>
-</div>
+        <label class="btn btn-outline-success center form-check-label">
+            <input class="form-check-input" type="radio" name="muscle" id="option1"
+                   autocomplete="off" value="1" onclick="setSymptomFilterValue(1);">
+            @lang('views.lowrisk')
+        </label>
+        <label class="btn btn-outline-warning center form-check-label">
+            <input class="form-check-input" type="radio" name="muscle" id="option2"
+                   autocomplete="off" value="2" onclick="setSymptomFilterValue(2);"> @lang('views.mediumrisk')
+        </label>
+        <label class="btn btn-outline-danger center form-check-label">
+            <input class="form-check-input" type="radio" name="muscle" id="option3"
+                   autocomplete="off" value="3" onclick="setSymptomFilterValue(3);"> @lang('views.highrisk')
+        </label>
+    </div>
 
 @endif
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+<div class="modal fade" id="myModal" tabindex="-1" role="modal" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -55,8 +58,7 @@
             </div>
             <div class="modal-footer">
                 <a type="button" href="/login"  class="btn btn-primary " >@lang('views.loginbutton')</a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="map.setZoom({{$maxzoomlevel}});">Close</button>
-
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">Close</button>
             </div>
         </div>
     </div>
@@ -71,20 +73,23 @@
 
     function initMap() {
 
-        // The location of Uluru
-        var uluru = {lat: {{$latitude}}, lng: {{$longitude}}};
-        // The map, centered at Uluru
+        /// set marker in myPosition
+        var myposition = {lat: {{$latitude}}, lng: {{$longitude}}};
         map = new google.maps.Map(
             document.getElementById('map'), {
                 zoom: {{$zoomlevel}},
-                    center: uluru,
-                mapTypeId: 'satellite'});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
+                center: myposition,
+                mapTypeId: 'satellite'}
+                );
+        var marker = new google.maps.Marker({position: myposition, map: map});
 
+        //add zoom listener to show modal when passing MaxZoom
         google.maps.event.addListener(map, 'zoom_changed', function() {
             if (map.getZoom() > {{$maxzoomlevel}}) {
-                $('#myModal').modal('show');
+                @guest
+                    $('#myModal').modal('show');
+                @endguest
+                map.setZoom({{$maxzoomlevel}});
             }
         });
 
@@ -94,8 +99,6 @@
     }
 
     function initHeatMap(){
-
-
         var mydatapoints = [];
         mydatapoints = @json($dataPoints);
         $mycasefilter=(document.getElementById('casefilter').value);
@@ -135,11 +138,13 @@
         heatmap.setMap(map);
 
     }
-    function setFilterValue(myvalue){
+    function setSymptomFilterValue(myvalue){
         heatmap.setMap(null)
         document.getElementById('casefilter').value = myvalue;
         initHeatMap();
     }
+
+
 
 </script>
 <script async defer

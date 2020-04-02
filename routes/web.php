@@ -19,33 +19,31 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 
-Route::middleware(['guest'])->group(function () {
-
-    Route::get('/', 'GuestMapController@generalView');
-
-});
-
-
-Route::get('/index', 'HomeController@index')->name('home');
-
-Route::get('/checkin', 'HomeController@checkin')->name('checkin');
-
-
-Route::post('/userdata', 'HomeController@userdata')->name('userdata');
-Route::post('/senddiagnose', 'HomeController@senddiagnose')->name('senddiagnose');
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/maps', 'SymptomsMapController@myPosition');
-
-
 Auth::routes();
-Route::post('/checkname', ['uses' => 'Auth\LoginController@checkname']);
-
-
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::middleware(['guest'])->group(function () {
 
-Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
+    Route::get('/', 'GuestMapController@index');
+
+});
+
+Route::post('/', ['uses' => 'SymptomController@index']);
+//Ajax route to check if username is taken
+Route::post('/checkname', ['uses' => 'Auth\LoginController@checkname']);
+
+//One time route to enter user data like age and risk group
+Route::get('/checkin', ['uses' =>'CheckInController@checkin'])->name('checkin');
+Route::post('/updateuserdata', 'CheckInController@userdata');
+
+//Route to go to symptoms view and add symproms
+Route::get('/symptoms', 'SymptomController@index');
+Route::post('/create', 'SymptomController@create');
+
+//Map view route
+
+Route::get('/maps', 'SymptomsMapController@myPosition')->name('maps');
+
+Route::get('/lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
 Route::get('/about', 'HomeController@about')->name('about');;

@@ -34,7 +34,7 @@
 
                 </div>
 
-                <form id='diagnoseform' method="post" action="/senddiagnose">
+                <form id='diagnoseform' method="post" action="/create">
                     @csrf
                     <div class="card">
                         <div class="card-header font-weight-bold" data-toggle="collapse"
