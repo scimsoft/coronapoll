@@ -14,7 +14,7 @@ return [
     'modaltext'=>'Si quieres ver las diferentes zonas de riesgos, unete y colabora indicando tu estado de riesgo y salud.',
 
     'positionmodeltitle'=>'AYUDANOS a PARAR el coronavirus',
-    'positionmodaltext'=>'Porfavor dejanos usar tu ubicacion! <br> Tu ubicacion es muy importante para poder avisar de personas con sympomas cerca de tu ubicacion! <br> Tu explorador solicitara permiso.',
+    'positionmodaltext'=>'Porfavor dejanos usar tu ubicacion! <br> Tu ubicacion es muy importante para poder avisar de personas con sympomas cerca de tu ubicacion! <br><br> Tu explorador solicitara permiso.',
     'positionmodalbutton' => 'I understand',
 
     'sharemodeltitle'=>'Comparte con tus contactos',

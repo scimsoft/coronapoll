@@ -13,7 +13,7 @@ return [
     'modaltext'=>'Please tell us if you are noticing COVID-19 symptoms. <br> We are trying to help the investigation on the ‘invisible’ spread. <br> Login with your google account or create a new user. <br> Please let us use your geo location info.',
 
     'positionmodeltitle'=>'Please help us STOP coronavirus',
-    'positionmodaltext'=>'Plaesa allow us to use your location! <br> Your location is very important to be able to tell you how many persons with symptoms you have neer your current position! <br> Your browser will pop up a message to confirm.',
+    'positionmodaltext'=>'Plaesa allow us to use your location! <br><br> Your location is very important to be able to tell you how many persons with symptoms you have neer your current position! <br> Your browser will pop up a message to confirm.',
     'positionmodalbutton' => 'I understand',
 
     'sharemodeltitle'=>'Share this page with all your contacts',

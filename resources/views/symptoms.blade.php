@@ -214,7 +214,26 @@
 
                         <span class="text-danger">{{ $errors->first('muscle') }}</span>
                     </div>
+                    <div class="modal fade" id="positionModel" tabindex="-1" role="modal" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <img src="images/icons/icon-36x36.png">
+                                    <h5 class="modal-title" id="exampleModalLongTitle"><span>    </span>@lang('views.positionmodeltitle')</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    @lang('views.positionmodaltext')
+                                </div>
+                                <div class="modal-footer">
 
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <input id="latitude" type="hidden" name="latitude" value="">
                     <input id="longitude" type="hidden" name="longitude" value="">
                     <input id="position" type="hidden" name="position" value="">
@@ -231,7 +250,13 @@
         @section('scripts')
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
             <script>
+                document.addEventListener('DOMContentLoaded', (event) => {
+
+                        $('#positionModel').modal('show');
+
+                });
                 $(document).ready(function () {
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(function (position) {
