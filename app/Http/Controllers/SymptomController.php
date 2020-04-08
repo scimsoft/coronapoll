@@ -61,6 +61,8 @@ class SymptomController extends Controller
             'cough' => 'required',
             'breath' => 'required',
             'muscle' => 'required',
+            'sorethroat'=> 'required',
+            'diarrea'=> 'required',
         ]);
 
         $fever = $request->temprature;
