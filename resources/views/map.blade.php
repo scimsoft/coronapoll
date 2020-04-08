@@ -11,10 +11,13 @@
 @guest
     <div class="card">
         <div class="card-body">
+
             <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <a href="/login" class="btn btn-info">@lang('views.loginbutton')</a>
+                <a href="/guestlogin" class="btn btn-info">@lang('views.guestbutton')</a>
                 <p class="h5"> @lang('views.guestwelcomename')</p>
                 @lang('views.guestwelcometext')</p>
-                <a href="/login" class="btn btn-info">@lang('views.loginbutton')</a>
+
 
             </div>
 

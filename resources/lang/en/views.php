@@ -41,7 +41,8 @@ return [
     'skip' => 'Skip >>',
 
     'sendbutton' => 'send',
-    'loginbutton' => 'enter',
+    'loginbutton' => 'Enter with a user',
+    'guestbutton' => 'Enter as Guest',
 
     'entercough' => 'level of cough',
     'entertempreture'  => 'body temperature',

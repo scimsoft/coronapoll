@@ -108,5 +108,10 @@ class LoginController extends Controller
         return redirect()->to('/symptoms');
     }
 
+    public function loginasguest(){
+        Auth::loginUsingId(1);
+        return redirect()->to('/symptoms');
+    }
+
 
 }

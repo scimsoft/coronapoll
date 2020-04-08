@@ -33,6 +33,8 @@ Route::post('/', ['uses' => 'SymptomController@index']);
 //Ajax route to check if username is taken
 Route::post('/checkname', ['uses' => 'Auth\LoginController@checkname']);
 
+Route::get('/guestlogin',['uses'=>'Auth\LoginController@loginasguest']);
+
 //One time route to enter user data like age and risk group
 Route::get('/checkin', ['uses' =>'CheckInController@checkin'])->name('checkin');
 Route::post('/updateuserdata', 'CheckInController@userdata');

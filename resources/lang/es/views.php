@@ -41,7 +41,8 @@ return [
     'checkindata' => 'Empezar',
 'skip' => 'Saltar >>',
     'sendbutton' => 'enviar',
-    'loginbutton' => 'entrar',
+    'loginbutton' => 'Entrar con un usario',
+    'guestbutton' => 'Entrar como invitado',
 
     'entercough' => 'nivel de tos',
     'entertempreture'  => 'temperature',
