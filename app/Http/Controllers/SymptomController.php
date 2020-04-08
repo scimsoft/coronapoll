@@ -67,6 +67,8 @@ class SymptomController extends Controller
         $cough = $request->cough;
         $breathShortness = $request->breath;
         $musclePain = $request->muscle;
+        $sorethroat = $request->sorethroat;
+        $diarrea = $request->diarrea;
 
         $symptom = new Symptom();
         $symptom->user_id = Auth::user()->id;
@@ -80,9 +82,11 @@ class SymptomController extends Controller
         $symptom->cough = $cough;
         $symptom->breathShortness = $breathShortness;
         $symptom->musclePain = $musclePain;
+        $symptom->sorethroat = $sorethroat;
+        $symptom->diarrea = $diarrea;
         $symptom->save();
 
-        $coranastage = round((float)(($breathShortness*3)+($fever*3)+($cough*2)+($musclePain))/9);
+        $coranastage = round((float)(($breathShortness*3)+($fever*3)+($cough*2)+($musclePain)+$sorethroat+$diarrea)/11);
         //$coranastage =$breathShortness * 3;
 
         $user = Auth::user();

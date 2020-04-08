@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'near_you_intro' => 'At <strong>3</strong> mi you have:',
+    'near_you_intro' => 'At <strong>30</strong> mi you have:',
     'confirmed_label' => 'confirmed cases.',
     'very_suspicious_label'  => 'with a lot of symptoms',
     'little_suspicious_label' => 'with a few symptoms',
@@ -24,6 +24,9 @@ return [
     'none' => 'None',
     'alittle' => 'Some',
     'alot' => 'A lot',
+    'ageunder18' =>'<< 18',
+    'agebetween18and65'=>'18 - 65',
+    'ageover65'=>'>> 65',
 
     'normaltemp' => '<100',
     'fever' => '100-102',
@@ -33,6 +36,8 @@ return [
     'Temperatura' => 'What is your temperature?',
     'Cough' => 'Do you have dry cough?',
     'Shortness of Breath' => 'Do you have difficulty breathing?',
-    'Muscle pain' => 'Do you have muscle pains?'
+    'Muscle pain' => 'Do you have muscle pains?',
+    'sorethroat' =>'Do you have a sour throught?',
+    'diarrea' =>'Do you have diarrea?',
 
 ];

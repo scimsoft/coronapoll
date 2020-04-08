@@ -40,12 +40,25 @@
                     <form id='checkindataform' method="post" action="/updateuserdata" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group row">
-                            <label for="titleid" class="col-sm-5 col-form-label">@lang('views.age')</label>
-                            <div class="">
-                                <input name="age" type="text" class="form-control col-sm-5 " id="titleid" placeholder="">
-                                <span class="text-danger">{{ $errors->first('age') }}</span>
-                            </div>
+                            <label for="titleid" class="col-sm-5 col-form-label">@lang('views.agegroup')</label>
+                            <div class="btn-group" data-toggle="buttons">
 
+                                <label class="btn btn-outline-info center form-check-label " >
+                                    <input class="form-check-input" type="radio" name="agegroup" id="option1"
+                                           autocomplete="off" value="1"> @lang('diagnosis.ageunder18')
+                                </label>
+                                <label class="btn btn-outline-info center form-check-label" >
+                                    <input class="form-check-input" type="radio" name="agegroup" id="option2"
+                                           autocomplete="off" value="2"> @lang('diagnosis.agebetween18and65')
+                                </label>
+                                <label class="btn btn-outline-info center form-check-label" >
+                                    <input class="form-check-input" type="radio" name="agegroup" id="option3"
+                                           autocomplete="off" value="3"> @lang('diagnosis.ageover65')
+                                </label>
+
+                            </div>
+                            <span class="col-sm-5 col-form-label"></span>
+                            <span class="text-danger">{{ $errors->first('agegroup') }}</span>
                         </div>
                         <div class="form-group row">
                             <label for="titleid" class="col-sm-5 col-form-label">@lang('views.riskgroup')</label>
@@ -85,6 +98,8 @@
                         <div class="form-group row ">
                             <div class="col-md-10">
                                 <button type="submit" class="btn btn-primary" onmousedown="$('#AllowPositionModal').modal('show');$('#checkindataform').submit();">@lang('views.checkindata')</button>
+
+                                <button type="submit" class="btn btn-primary" onmousedown="$('#AllowPositionModal').modal('show');$('#checkindataform').submit();">@lang('views.skip')</button>
                             </div>
                         </div>
                     </form>

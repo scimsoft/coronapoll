@@ -39,7 +39,7 @@ return [
     'highrisk' => "Mucho Riesgo",
     'confirmed' => '¿Eres positivo confirmado de COVID-19?',
     'checkindata' => 'Empezar',
-
+'skip' => 'Saltar >>',
     'sendbutton' => 'enviar',
     'loginbutton' => 'entrar',
 
@@ -48,5 +48,5 @@ return [
     'entermusclepain' => 'dolor de cuerpo',
     'enterbreath' => 'dificultades de respirar',
 
-
+    'agegroup' => 'Que edad tiene?',
 ];

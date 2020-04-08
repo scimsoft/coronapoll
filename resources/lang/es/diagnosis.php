@@ -13,7 +13,7 @@ return [
 |
 */
 
-    'near_you_intro' => 'A 5 km tienes',
+    'near_you_intro' => 'A 50 km tienes',
     'confirmed_label' => 'casos confirmados',
     'very_suspicious_label'  => 'casos con muchos sintomas',
     'little_suspicious_label' => 'casos con poco sintomas',
@@ -22,6 +22,10 @@ return [
     'none' => 'nada',
     'alittle' => 'un poco',
     'alot' => 'mucho',
+    'ageunder18' =>'<< 18',
+    'agebetween18and65'=>'18 - 65',
+    'ageover65'=>'>> 65',
+
     'normaltemp' => '< 38',
     'fever' => ' 38 - 39',
     'highfever' => '> 39',
@@ -31,5 +35,7 @@ return [
 
     'Cough' => '¿Tienes tos seca?',
     'Shortness of Breath' => '¿Tienes dificultad para respirar?',
-    'Muscle pain' => '¿Tienes dolores musculares?'
+    'Muscle pain' => '¿Tienes dolores musculares?',
+    'sorethroat' =>'¿Tienes dolor de gargante?',
+    'diarrea' =>'¿Tienes diarrea?',
 ];

@@ -32,13 +32,13 @@ return [
     'age' => 'Your Age (Optional)',
     'riskgroup' => 'Are you in a risk group? (Optional)',
 
-    'make_a_choice' => "Select an option",
-    'lowrisk' => "Low Risk",
-    'mediumrisk' => "Medium Risk",
-    'highrisk' => "High Risk",
+    'make_a_choice' => 'Select an option',
+    'lowrisk' => 'Low Risk',
+    'mediumrisk' => 'Medium Risk',
+    'highrisk' => 'High Risk',
     'confirmed' => 'Are you confirmed COVIP-19 patient?',
     'checkindata' => 'Send your data',
-
+    'skip' => 'Skip >>',
 
     'sendbutton' => 'send',
     'loginbutton' => 'enter',
@@ -47,5 +47,8 @@ return [
     'entertempreture'  => 'body temperature',
     'entermusclepain' => 'muscle pain',
     'enterbreath' => 'breathing difficulties',
+
+    'agegroup' => 'Which age group are you in?',
+
 
 ];
