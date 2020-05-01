@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.zerocorona",
+    "sha256_cert_fingerprints": ["91:5C:AB:7F:2E:E0:43:65:AF:58:A9:CF:C1:F7:7D:1C:F8:D0:96:0C:96:FB:EB:87:4B:F9:BF:83:08:9A:DA:5D"] }
+}]
