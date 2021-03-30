@@ -23,7 +23,7 @@ add('writable_dirs', []);
 // Hosts
 
 host('buuntu.com')
-    ->set('deploy_path', '/var/www/coronatest');
+    ->set('deploy_path', '/var/www/0corona');
     
 // Tasks
 
