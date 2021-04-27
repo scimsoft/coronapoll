@@ -22,7 +22,7 @@ add('writable_dirs', []);
 
 // Hosts
 
-host('buuntu.com')
+host('playaalta.com')
     ->set('deploy_path', '/var/www/0corona');
     
 // Tasks
